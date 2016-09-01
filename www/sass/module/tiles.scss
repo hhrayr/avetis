@@ -1,0 +1,158 @@
+// *****************
+// **** Desktop ****
+// *****************
+.banner-tile {
+  margin: 20px 0;
+  height: 350px;
+  width: 100%;
+  text-align: left;
+  .frame {
+    border: 1px solid #b8b7b2;
+    background-size: cover;
+    height: 100%;
+    .row {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      .col {
+        position: relative;
+        height: 100%;
+        padding-left: 0;
+
+        // *******************
+        // ***** Text box ****
+        // *******************
+        .tip {
+          background: white;
+          padding: 15px;
+          box-sizing: border-box;
+          position: absolute;
+          bottom: 0;
+          width: 100%;
+          .title {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 10px;
+          }
+          .text {
+            font-size: 14px;
+            margin-bottom: 10px;
+          }
+          .link {
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 768px) {
+  .banner-tile {
+    padding: 0!important;
+    .frame {
+      border-left: 0;
+      border-right: 0;
+      border-top: 1px solid #b8b7b2;
+      border-bottom: 1px solid #b8b7b2;
+      .row {
+        .col {
+          padding-left: 0;
+        }
+      }
+    }
+  }
+}
+
+// *****************
+// **** Desktop ****
+// *****************
+.image-tile {
+  margin: 20px 0;
+  .box {
+    display: inline-block;
+    border: 1px solid #b8b7b2;
+    .image {
+      background-size: cover;
+      height: 150px;
+      width: 100%;
+    }
+
+    // *****************
+    // **** textbox ****
+    // *****************
+    .text {
+      padding: 15px 15px 20px;
+      height: 200px;
+      width: 100%;
+      text-align: left;
+      font-size: 14px;
+      .title {
+        font-weight: 600;
+        margin-bottom: 10px;
+        font-size: 16px;
+      }
+      .description {
+        overflow: hidden;
+        max-height: 100px;
+      }
+      .link {
+        position: absolute;
+        bottom: 15px;
+        font-weight: 600;
+      }
+    }
+  }
+}
+
+
+// *****************
+// **** Desktop ****
+// *****************
+.video-tile {
+  margin: 20px 0;
+  .box {
+    display: inline-block;
+    border: 1px solid #b8b7b2;
+    width: 100%;
+    .image {
+      background-size: cover;
+      height: 225px;
+      width: 100%;
+      @include cursor;
+      position: relative;
+      /* ***** Play Icon ***** */
+      /* ********************* */
+      &:after {
+        display: block;
+        position: absolute;
+        width: 100%;
+        top: 50%;
+        -webkit-transofrm: translateY(-50%);
+        transform: translateY(-50%);
+        text-align: center;
+        font-family: icomoon;
+        content: "\e605";
+        font-size: 7rem;
+        color: white;
+      }
+    }
+    /* ***** Text Box ***** */
+    /* ******************** */
+    .text {
+      padding: 15px 15px 20px;
+      height: 125px;
+      width: 100%;
+      text-align: left;
+      font-size: 14px;
+      .title {
+        font-weight: 600;
+        margin-bottom: 10px;
+        font-size: 16px;
+      }
+      .description {
+        overflow: hidden;
+        max-height: 60px;
+      }
+    }
+  }
+}
