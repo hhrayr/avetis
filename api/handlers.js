@@ -10,5 +10,5 @@ export function handleApiRequest(req, res) {
     query: req.query,
   });
   // const err = { statusCode: 401, message: 'restrictedAccess' };
-  // res.status(err.statusCode).send(err);
+  // // res.status(err.statusCode).send(err);
 }
