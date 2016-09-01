@@ -1,0 +1,42 @@
+// *****************
+// ***** Button ****
+// *****************
+.button {
+  @include cursor;
+  color: white;
+  display: inline-block;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  transition: all 0.8s;
+  > * {
+    min-width: 265px;
+    padding: 15px;
+    display: inline-block;
+  }
+  a {
+    color: white;
+    text-decoration: none;
+    &:hover {
+      color: white;
+    }
+    &:after {
+      content: "";
+    }
+  }
+  &.gray {
+    background: $light-grey;
+    border: 1px solid white;
+  }
+  &.green {
+    background: $middle-green;
+    border: 1px solid $green;
+  }
+  &.blue {
+    background: $light-blue;
+    border: 1px solid white;
+    &:hover {
+      background: $middle-blue;
+    }
+  }
+}
