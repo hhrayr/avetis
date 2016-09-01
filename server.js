@@ -24,7 +24,6 @@ import xmlbuilder from 'xmlbuilder';
 import genSitemapUrls from './www/utils/genSitemapUrls';
 import { getRecommendedLanguageFromIP } from './www/utils/geo';
 import { cacheHeaders, pullTranslations } from './shared/utils/server';
-// test master push
 import { handleApiRequest } from './api/handlers';
 
 
