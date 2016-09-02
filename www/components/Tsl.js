@@ -35,9 +35,9 @@ Tsl.defaultProps = {
 };
 
 Tsl.propTypes = {
-  id: React.PropTypes.string,
+  id: React.PropTypes.string.isRequired,
   interpolate: React.PropTypes.object,
-  interpolatePattern: React.PropTypes.object,
+  interpolatePattern: React.PropTypes.object.isRequired,
   language: React.PropTypes.string,
 };
 

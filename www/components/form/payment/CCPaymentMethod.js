@@ -2,11 +2,15 @@ import React from 'react';
 import { merge } from 'lodash';
 import BaseFormElement from '../BaseFormElement';
 import { getTranslation } from '../../Tsl';
-import { trimMinusSpace } from '../../../utils/stringUtils';
+import { trimMinusSpace } from '../../../../shared/utils/stringUtils';
 import Select from '../Select';
 import Input from '../Input';
 import CCValidUntil from './CCValidUntil';
-import { isValidLength, isCreditCardNumber, isCreditCardValidity } from '../../../utils/validation';
+import {
+  isValidLength,
+  isCreditCardNumber,
+  isCreditCardValidity,
+} from '../../../../shared/utils/validation';
 
 class CCPaymentMethod extends BaseFormElement {
   constructor(props) {

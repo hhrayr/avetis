@@ -36,7 +36,7 @@ const favicon = require('serve-favicon');
 
 const server = express();
 
-server.all('/api/:apiMethod', handleApiRequest);
+server.all('/api/:area/:method', handleApiRequest);
 
 server.use(cacheHeaders);
 server.use('/assets', express.static(path.join(__dirname, '/www/assets')));

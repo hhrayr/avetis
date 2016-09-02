@@ -4,7 +4,7 @@ import BaseFormElement from '../BaseFormElement';
 import { getTranslation } from '../../Tsl';
 import Input from '../Input';
 import Checkbox from '../Checkbox';
-import { isValidLength, isIBAN, isBIC } from '../../../utils/validation';
+import { isValidLength, isIBAN, isBIC } from '../../../../shared/utils/validation';
 
 class ECPaymentMethod extends BaseFormElement {
   constructor(props) {

@@ -2,7 +2,7 @@ import React from 'react';
 import BaseFormElement from './BaseFormElement';
 import Select from './Select';
 import { getTranslation } from '../Tsl';
-import { isNumeric } from '../../utils/validation';
+import { isNumeric } from '../../../shared/utils/validation';
 
 class DateElement extends BaseFormElement {
   constructor(props) {

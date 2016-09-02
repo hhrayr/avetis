@@ -1,6 +1,6 @@
 import React from 'react';
 import Input from './Input';
-import { getPasswordSecurityLevel } from '../../utils/validation';
+import { getPasswordSecurityLevel } from '../../../shared/utils/validation';
 import Tsl from '../Tsl';
 import BaseFormElement from './BaseFormElement';
 
