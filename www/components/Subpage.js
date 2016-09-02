@@ -6,7 +6,7 @@ let Subpage = (props) => {
     <div className="container subpage">
       <h2>{props.content.title}</h2>
       <div className="body-text"
-        dangerouslySetInnerHTML={{ __html: props.content }}
+        dangerouslySetInnerHTML={{ __html: props.content.body }}
       >
       </div>
     </div>
@@ -16,12 +16,15 @@ let Subpage = (props) => {
 Subpage = connectToStores(Subpage, ['RouteStore'], (component) => {
   const routeStore = component.getStore('RouteStore');
   return {
-    content: `content.${routeStore.getCurrentRoute().page}`,
+    content: {
+      title: `content.title.${routeStore.getCurrentRoute().page}`,
+      body: `content.body.${routeStore.getCurrentRoute().page}`,
+    },
   };
 });
 
 Subpage.propTypes = {
-  content: React.PropTypes.string,
+  content: React.PropTypes.object,
 };
 
 export default Subpage;

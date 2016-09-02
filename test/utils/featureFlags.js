@@ -1,4 +1,4 @@
-import assert from 'assert';
+import expect from 'expect';
 import jsdom from 'jsdom';
 import {
   describe,
@@ -36,7 +36,7 @@ describe('FeatureFlagUtility', () => {
       global.document = window.document;
       global.navigator = window.navigator;
       global.featureFlags = Fixture.enabledFeatures;
-      featureFlags = require('../../utils/featureFlags');
+      featureFlags = require('../../shared/utils/featureFlags');
       done();
     });
   });
@@ -49,8 +49,7 @@ describe('FeatureFlagUtility', () => {
   });
 
   it('should return available features', (done) => {
-    assert(featureFlags);
-    assert.equal(Fixture.enabledFeatures, featureFlags.getFeatureFlags());
+    expect(featureFlags.getFeatureFlags()).toEqual(Fixture.enabledFeatures);
     done();
   });
 
@@ -59,8 +58,8 @@ describe('FeatureFlagUtility', () => {
       return Fixture.enabledFeatures;
     };
 
-    assert.equal(featureFlags.isEnabled('mapi', 'beti'), true);
-    assert.equal(featureFlags.isEnabled('mapi', 'prod'), false);
+    expect(featureFlags.isEnabled('mapi', 'beti')).toEqual(true);
+    expect(featureFlags.isEnabled('mapi', 'prod')).toEqual(false);
     done();
   });
 
@@ -68,7 +67,7 @@ describe('FeatureFlagUtility', () => {
     featureFlags.getFeatureFlags = function getFeatureFlagsMock() {
       return Fixture.enabledFeatures;
     };
-    assert.equal(featureFlags.isEnabled('unknown', 'beti'), false);
+    expect(featureFlags.isEnabled('unknown', 'beti')).toEqual(false);
     done();
   });
 });

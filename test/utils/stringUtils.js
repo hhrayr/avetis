@@ -1,6 +1,6 @@
 import expect from 'expect';
 import { describe, it } from 'mocha';
-import { trimSpace, trimMinusSpace } from '../../utils/stringUtils';
+import { trimSpace, trimMinusSpace } from '../../shared/utils/stringUtils';
 
 describe('String Utils', () => {
   it('trimSpace: should behave as expected with blank values', (done) => {

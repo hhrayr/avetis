@@ -1,7 +1,7 @@
 import React from 'react';
 import BaseFormElement from '../BaseFormElement';
 import { getTranslation } from '../../Tsl';
-import { isNumeric } from '../../../utils/validation';
+import { isNumeric } from '../../../../shared/utils/validation';
 import Select from '../Select';
 
 class CCValidUntil extends BaseFormElement {

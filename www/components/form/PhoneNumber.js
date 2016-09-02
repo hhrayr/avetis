@@ -1,7 +1,7 @@
 import React from 'react';
 import { merge } from 'lodash';
 import Input from './Input';
-import { formatNationalNumber, formatCountryCode } from '../../utils/validation';
+import { formatNationalNumber, formatCountryCode } from '../../../shared/utils/validation';
 import BaseFormElement from './BaseFormElement';
 
 class PhoneNumber extends BaseFormElement {

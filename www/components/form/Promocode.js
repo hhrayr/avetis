@@ -3,7 +3,7 @@ import BaseFormElement from './BaseFormElement';
 import Input from './Input';
 import Button from './Button';
 import Tsl from '../Tsl';
-import { trimSpace } from '../../utils/stringUtils';
+import { trimSpace } from '../../../shared/utils/stringUtils';
 
 class Promocode extends BaseFormElement {
   constructor(props) {
