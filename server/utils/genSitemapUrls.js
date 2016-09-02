@@ -1,6 +1,6 @@
 import pathToRegexp from 'path-to-regexp';
-import environment from '../configs/environment';
-import filter from 'lodash/filter';
+import { filter } from 'lodash';
+import environment from '../../www/configs/environment';
 
 const basepath = 'https://www.drive-now.com';
 
