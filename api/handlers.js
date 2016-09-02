@@ -2,7 +2,7 @@ export function handleApiRequest(req, res) {
   res.send({
     apiToken: req.get('api-tocken') || 'foo',
     body: req.body,
-    ip: req.ip,
+    ip: req.get('true-client-ip') || req.ip,
     method: req.method,
     originalUrl: req.originalUrl,
     params: req.params,
@@ -10,5 +10,5 @@ export function handleApiRequest(req, res) {
     query: req.query,
   });
   // const err = { statusCode: 401, message: 'restrictedAccess' };
-  // // res.status(err.statusCode).send(err);
+  // res.status(err.statusCode).send(err);
 }
