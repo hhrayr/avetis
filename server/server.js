@@ -51,10 +51,6 @@ if (env !== 'local') {
   });
 }
 
-const port = process.env.PORT || 5050;
-server.listen(port, '0.0.0.0');
-console.log(`Application listening on port ${port}`);
-
 // do not touch, already bad practice app has to crash
 if (env !== 'local') {
   process.on('uncaughtException', (err) => {
