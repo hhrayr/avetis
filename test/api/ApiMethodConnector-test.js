@@ -15,20 +15,22 @@ describe('Api Connector', () => {
     server.close();
   });
 
-  it('is should find the correct Api method', (done) => {
+  it('should find the correct api method', (done) => {
     request(app)
       .get('/api/test/pingpong')
       .expect(200)
+      .end(done);
+  });
+
+  it('should return 406 if the given api area or/and method is not found', (done) => {
+    request(app)
+      .get('/api/test/invalidMethod')
+      .expect(406)
       .end(() => {
         request(app)
-          .get('/api/test/invalidMethod')
+          .get('/api/invalidArea/invalidMethod')
           .expect(406)
-          .end(() => {
-            request(app)
-              .get('/api/invalidArea/invalidMethod')
-              .expect(406)
-              .end(done);
-          });
+          .end(done);
       });
   });
 

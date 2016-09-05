@@ -16,7 +16,7 @@ import {
   isIBAN,
   isBIC,
   isCodiceFiscale,
-} from '../../shared/utils/validation';
+} from '../../../shared/utils/validation';
 
 describe('Validation Utils', () => {
   it('should not accept empty email', (done) => {
