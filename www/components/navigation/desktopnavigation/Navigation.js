@@ -58,8 +58,4 @@ Navigation.propTypes = {
   isLanguageSlideoutVisible: React.PropTypes.bool.isRequired,
 };
 
-Navigation.contextTypes = {
-  executeAction: React.PropTypes.func,
-};
-
 export default Navigation;

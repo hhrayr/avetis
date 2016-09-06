@@ -12,10 +12,11 @@ class Input extends BaseFormElement {
     };
   }
 
-  componentWillReceiveProps(props) {
-    if (props.value) {
-      this.updateLabelPosition();
-    }
+  shouldComponentUpdate(nextProps, nextState) {
+    return this.state.labelPosition !== nextState.labelPosition ||
+      this.props.disabled !== nextProps.disabled ||
+      this.props.error !== nextProps.error ||
+      this.props.isInValid !== nextProps.isInValid;
   }
 
   updateLabelPosition() {
@@ -119,7 +120,7 @@ class Input extends BaseFormElement {
           id={this.props.id}
           name={this.props.name}
           maxLength={this.getMaxLengthAttr()}
-          value={this.props.value || ''}
+          defaultValue={this.props.value}
           type={this.props.type}
           onFocus={this.onFocus}
           onChange={this.onChange}

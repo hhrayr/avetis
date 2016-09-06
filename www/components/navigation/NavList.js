@@ -17,21 +17,21 @@ class NavList extends React.Component {
   }
 
   renderItemList() {
-    return map(this.props.routes, (route) => {
+    return map(this.props.routes, (route, routeName) => {
       if (route.staticUrl && this.props.showStaticLinks) {
         return this.renderStaticUrl(route);
       } else if (route.list) {
-        return this.renderNavUrl(route);
+        return this.renderNavUrl(route, routeName);
       }
       return null;
     });
   }
 
-  renderNavUrl(route) {
+  renderNavUrl(route, routeName) {
     return (
       <li key={ route.path }>
         <NavLink routeName={ route.page }>
-          <Tsl id={`generics.navigation.${route.page}.text`} />
+          <Tsl id={`generics.navigation.${routeName}`} />
         </NavLink>
       </li>
     );

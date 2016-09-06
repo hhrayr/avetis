@@ -65,8 +65,7 @@
 }
 
 .navbar-default {
-  background-color: #fff;
-  border-bottom: 1px solid #efeeee;
+  background-color: transparent;
   min-width: 320px;
   width: 100%;
   position: fixed;
@@ -114,14 +113,13 @@
 
 .menu {
   .tile {
-    font-weight: bold;
-    font-size: 0.75rem;
     color: #333;
-    text-align: center;
-    border-left: 1px solid #e7e7e7;
-    padding: 8px 0;
     cursor: pointer;
+    text-align: center;
+    font-size: 0.75rem;
+    font-weight: bold;
     line-height: 1rem;
+    padding: 8px 0;
     &.active {
       background-color: #30abce;
       color: #fff;
@@ -202,6 +200,7 @@
 }
 
 .navbar-mobile-container {
+  background-color: #ffffff;
   @include unselectable;
   .navbar-mobile-item-container {
     border-bottom: 1px solid #efeeee;
