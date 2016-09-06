@@ -24,10 +24,11 @@ html {
   box-sizing: inherit;
 }
 body {
-  font: 100% $font-stack;
   color: $grey;
+  font-family: $font-stack;
   font-weight: normal;
   font-style: normal;
+  position: relative;
 }
 a {
   &:focus, &:active {

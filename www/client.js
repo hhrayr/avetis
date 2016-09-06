@@ -6,8 +6,6 @@ import './sass/main.scss';
 import app from './app';
 import { createElementWithContext } from 'fluxible-addons-react';
 
-console.log('from client');
-
 const debugClient = debug('avetis');
 const dehydratedState = window.App; // Sent from the server
 

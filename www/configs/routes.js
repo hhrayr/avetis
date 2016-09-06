@@ -2,6 +2,8 @@ import _404 from '../components/_404';
 import Home from '../components/home/Home';
 import Features from '../components/Features';
 import Subpage from '../components/Subpage';
+import ContactUs from '../components/Subpage';
+import Registration from '../components/Subpage';
 
 export default {
   _404: {
@@ -10,7 +12,6 @@ export default {
     page: '_404',
     name: '_404',
     handler: _404,
-    list: false,
     sitemap: false,
   },
   privacy: {
@@ -31,15 +32,47 @@ export default {
     path: '/:language/feature-flags',
     method: 'get',
     page: 'featureFlags',
-    list: false,
     handler: Features,
     sitemap: false,
+  },
+  homeFeatures: {
+    path: '/:language/features',
+    page: 'home',
+    list: true,
+    handler: Home,
+  },
+  homeUseCases: {
+    path: '/:language/usecases',
+    page: 'home',
+    list: true,
+    handler: Home,
+  },
+  homePricing: {
+    path: '/:language/pricing',
+    page: 'home',
+    list: true,
+    handler: Home,
+  },
+  contactUs: {
+    path: '/:language/contact',
+    method: 'get',
+    page: 'contactUs',
+    handler: ContactUs,
+    sitemap: false,
+    list: true,
+  },
+  registration: {
+    path: '/:language/registration',
+    method: 'get',
+    page: 'registration',
+    handler: Registration,
+    sitemap: false,
+    list: true,
   },
   home: {
     path: '/:language',
     method: 'get',
     page: 'home',
-    list: false,
     handler: Home,
     sitemap: true,
   },

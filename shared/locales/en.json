@@ -2,6 +2,17 @@
   "generics": {
     "about": {
       "us": "About Us"
+    },
+    "languages": {
+      "en": "English",
+      "ru": "Russian"
+    },
+    "navigation": {
+      "contactUs": "Contact Us",
+      "homeFeatures": "Features",
+      "homePricing": "Pricing",
+      "homeUseCases": "Use Cases",
+      "registration": "Registration"
     }
   }
 }

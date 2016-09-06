@@ -6,9 +6,9 @@ import {
   beforeEach,
   afterEach,
 } from 'mocha';
+const featureFlags = require('../../../shared/utils/featureFlags');
 
 describe('FeatureFlagUtility', () => {
-  let featureFlags;
   const Fixture = {
     enabledFeatures: {
       mapi: ['alpha', 'beti'],
@@ -36,7 +36,6 @@ describe('FeatureFlagUtility', () => {
       global.document = window.document;
       global.navigator = window.navigator;
       global.featureFlags = Fixture.enabledFeatures;
-      featureFlags = require('../../shared/utils/featureFlags');
       done();
     });
   });
@@ -54,7 +53,7 @@ describe('FeatureFlagUtility', () => {
   });
 
   it('should check if a feature is enabled', (done) => {
-    featureFlags.getFeatureFlags = function getFeatureFlagsMock() {
+    featureFlags.getFeatureFlags = () => {
       return Fixture.enabledFeatures;
     };
 
@@ -64,7 +63,7 @@ describe('FeatureFlagUtility', () => {
   });
 
   it('should return not-enabled for an unknown feature', (done) => {
-    featureFlags.getFeatureFlags = function getFeatureFlagsMock() {
+    featureFlags.getFeatureFlags = () => {
       return Fixture.enabledFeatures;
     };
     expect(featureFlags.isEnabled('unknown', 'beti')).toEqual(false);
