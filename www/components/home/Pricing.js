@@ -2,7 +2,7 @@ import React from 'react';
 
 export default () => {
   return (
-    <div className="pricing">
+    <div id="pricing">
       Pricing
     </div>
   );

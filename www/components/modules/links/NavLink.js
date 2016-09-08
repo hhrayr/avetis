@@ -39,7 +39,6 @@ NavLink.propTypes = {
   overwriteLanguage: React.PropTypes.string,
   isNewWindow: React.PropTypes.bool,
   className: React.PropTypes.string,
-  onClick: React.PropTypes.any,
 };
 
 NavLink.defaultProps = {

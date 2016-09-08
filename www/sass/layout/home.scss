@@ -1,17 +1,17 @@
 
-#home {
-  .intro {
+.page-content {
+  #intro {
+    background-color: #ededed;
     height: 450px;
   }
-  .features {
-    background-color: red;
+  #features {
     height: 450px;
   }
-  .use-cases {
-    height: 450px;
-  }
-  .pricing {
+  #use-cases {
     background-color: blue;
+    height: 450px;
+  }
+  #pricing {
     height: 450px;
   }
 }

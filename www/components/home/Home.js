@@ -1,4 +1,6 @@
 import React from 'react';
+import { connectToStores } from 'fluxible-addons-react';
+import { Element as ScrollElelement, scroller } from 'react-scroll';
 import Intro from './Intro';
 import Features from './Features';
 import UseCases from './UseCases';
@@ -8,6 +10,10 @@ class Home extends React.Component {
   constructor(props) {
     super(props);
     this.handleHomeBackgroundScroll = this.handleHomeBackgroundScroll.bind(this);
+  }
+
+  shouldComponentUpdate() {
+    return false;
   }
 
   componentDidMount() {
@@ -20,6 +26,11 @@ class Home extends React.Component {
 
     document.body.appendChild(this.backgroundNode);
     window.addEventListener('scroll', this.handleHomeBackgroundScroll);
+    this.scrollToRouteSection();
+  }
+
+  componentWillReceiveProps() {
+    this.scrollToRouteSection();
   }
 
   componentWillUnmount() {
@@ -29,7 +40,19 @@ class Home extends React.Component {
 
   handleHomeBackgroundScroll() {
     this.backgroundImageContainer.style.transform =
-      `translate(0, -${Math.round(this.getWindowScrollTop() * 0.75)}px)`;
+      `translate(0, -${Math.round(this.getWindowScrollTop() * 0.5)}px)`;
+  }
+
+  scrollToRouteSection() {
+    console.log('this.props.menuItemRoute', this.props.menuItemRoute);
+    if (this.props.menuItemRoute) {
+      scroller.scrollTo(this.props.menuItemRoute, {
+        duration: 1000,
+        delay: 50,
+        offset: -55,
+        smooth: true,
+      });
+    }
   }
 
   getWindowScrollTop() {
@@ -40,17 +63,34 @@ class Home extends React.Component {
   render() {
     return (
       <div>
-        <Intro />
-        <Features />
-        <UseCases />
-        <Pricing />
+        <ScrollElelement name="home">
+          <Intro />
+        </ScrollElelement>
+        <ScrollElelement name="homeFeatures">
+          <Features />
+        </ScrollElelement>
+        <ScrollElelement name="homeUseCases">
+          <UseCases />
+        </ScrollElelement>
+        <ScrollElelement name="homePricing">
+          <Pricing />
+        </ScrollElelement>
       </div>
     );
   }
 }
 
-Home.contextTypes = {
-  executeAction: React.PropTypes.func,
+Home.propTypes = {
+  menuItemRoute: React.PropTypes.string,
 };
+
+Home = connectToStores(Home,
+  ['NavigationStore'], (component) => {
+    const navigationStore = component.getStore('NavigationStore');
+    return {
+      menuItemRoute: navigationStore.getMenuItemRoute(),
+    };
+  });
+
 
 export default Home;

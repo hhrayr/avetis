@@ -22,7 +22,7 @@ class Navigation extends React.Component {
 
   renderNavigationList() {
     return (
-      <div className="col-sm-6 hidden-xs">
+      <div className="col-sm-8 hidden-xs">
         <NavList />
       </div>
     );
@@ -31,7 +31,7 @@ class Navigation extends React.Component {
   renderderLanguageSelector() {
     return (
       <div className={
-          `col-sm-4 top-navbar-lng-selector-container tile ${
+          `top-navbar-lng-selector-container tile ${
           this.props.isLanguageSlideoutVisible ? 'active' : ''
         }`}
       >
@@ -42,10 +42,8 @@ class Navigation extends React.Component {
 
   renderRightBar() {
     return (
-      <div className="navbar-right-icons menu col-xs-3 col-sm-4">
-        <div className="hidden-xs">
-          { this.renderderLanguageSelector() }
-        </div>
+      <div className="navbar-right-icons menu hidden-xs col-sm-2">
+        { this.renderderLanguageSelector() }
       </div>
     );
   }

@@ -24,12 +24,21 @@ class NavigationStore extends BaseStore {
     this.emitChange();
   }
 
+  navigateMenuItemRoute(payload) {
+    this.menuItemRoute = payload;
+    this.emitChange();
+  }
+
   getIsMobileNavbarVisible() {
     return this.isMobileNavbarVisible;
   }
 
   getIsLanguageSlideoutVisible() {
     return this.isLanguageSlideoutVisible;
+  }
+
+  getMenuItemRoute() {
+    return this.menuItemRoute;
   }
 }
 
@@ -38,6 +47,7 @@ NavigationStore.handlers = {
   TOGGLE_MOBILE_NAVIGATION_BUTTON: 'toggleMobileNavigationButton',
   CLOSE_MOBILE_NAVGATION: 'closeMobileNavigation',
   TOGGLE_LANGUAGE_SLIDEOUT_VISIBILITY: 'toggleLanguageSlideoutVisibility',
+  NAVIGATE_MENU_ITEM_ROUTE: 'navigateMenuItemRoute',
 };
 
 export default NavigationStore;

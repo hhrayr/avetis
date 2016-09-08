@@ -8,12 +8,13 @@ import morgan from 'morgan';
 import favicon from 'serve-favicon';
 import environmentConfig from '../www/configs/environment';
 import logger from '../shared/utils/logger';
-import { cacheHeaders, pullTranslations } from '../shared/utils/server';
-import { handleApiRequest } from '../api/handlers';
+import handleApiRequest from '../api/handleApiRequest';
 import sitemapHandler from './handlers/sitemap';
 import infoHandler from './handlers/info';
 import homeHandler from './handlers/home';
 import webAppHandler from './handlers/webApp';
+import pullTranslations from './handlers/pullTranslations';
+import cacheHeaders from './handlers/cacheHeaders';
 import { getEnvironment } from '../shared/utils/env';
 const env = getEnvironment();
 
