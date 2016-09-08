@@ -33,7 +33,6 @@ class UrlLink extends React.Component {
       <NavLink
         className={ this.props.componentClass }
         routeName={ this.props.url }
-        onClick={ this.props.onClick }
       >
         { this.props.children }
       </NavLink>

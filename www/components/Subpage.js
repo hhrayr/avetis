@@ -14,11 +14,11 @@ let Subpage = (props) => {
 };
 
 Subpage = connectToStores(Subpage, ['RouteStore'], (component) => {
-  const routeStore = component.getStore('RouteStore');
+  const currentRoute = component.getStore('RouteStore').getCurrentRoute();
   return {
     content: {
-      title: `content.title.${routeStore.getCurrentRoute().page}`,
-      body: `content.body.${routeStore.getCurrentRoute().page}`,
+      title: `content.title.${currentRoute.page}`,
+      body: `content.body.${currentRoute.page}`,
     },
   };
 });

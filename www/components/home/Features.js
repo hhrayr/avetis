@@ -2,7 +2,7 @@ import React from 'react';
 
 export default () => {
   return (
-    <div className="features">
+    <div id="features">
       Features
     </div>
   );

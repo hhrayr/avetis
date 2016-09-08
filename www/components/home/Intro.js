@@ -2,7 +2,7 @@ import React from 'react';
 
 export default () => {
   return (
-    <div className="intro">
+    <div id="intro">
       intro
     </div>
   );
