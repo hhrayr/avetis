@@ -20,7 +20,7 @@ let Application = (props) => {
           isMobileNavbarVisible={props.isMobileNavbarVisible}
           isLanguageSlideoutVisible={props.isLanguageSlideoutVisible}
         />
-      <div className="handler-content page-content" id={props.currentRoute.name}>
+        <div className="handler-content page-content">
           <Handler />
         </div>
         <Footer isLimited={props.currentRoute.isFooterLimited} />

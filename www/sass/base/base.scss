@@ -1,6 +1,5 @@
 // Variables
 $font-stack: Helvetica, Arial, sans-serif;
-$grey: #333;
 $light-grey: #b9b7b2;
 $light-blue: #30abce;
 $middle-blue: #007fa3;
@@ -24,7 +23,7 @@ html {
   box-sizing: inherit;
 }
 body {
-  color: $grey;
+  color: #222;
   font-family: $font-stack;
   font-weight: normal;
   font-style: normal;

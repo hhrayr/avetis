@@ -40,7 +40,7 @@ class NavList extends React.Component {
           self.context.executeAction(navigateMenuItemRoute, route.menuRouteName);
           if (self.props.currentRouteName !== route.page) {
             self.context.executeAction(navigateAction, {
-              routeName,
+              routeName: route.page,
               params: {
                 language: self.props.language,
               },

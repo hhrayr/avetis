@@ -6,6 +6,8 @@ import Features from './Features';
 import UseCases from './UseCases';
 import Pricing from './Pricing';
 
+const headerHeight = 55;
+
 class Home extends React.Component {
   constructor(props) {
     super(props);
@@ -44,12 +46,11 @@ class Home extends React.Component {
   }
 
   scrollToRouteSection() {
-    console.log('this.props.menuItemRoute', this.props.menuItemRoute);
     if (this.props.menuItemRoute) {
       scroller.scrollTo(this.props.menuItemRoute, {
         duration: 1000,
         delay: 50,
-        offset: -55,
+        offset: -headerHeight,
         smooth: true,
       });
     }
@@ -64,7 +65,7 @@ class Home extends React.Component {
     return (
       <div>
         <ScrollElelement name="home">
-          <Intro />
+          <Intro offset={headerHeight} />
         </ScrollElelement>
         <ScrollElelement name="homeFeatures">
           <Features />

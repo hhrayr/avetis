@@ -3,6 +3,7 @@
 * NAVIGATION STYLE
 *
 */
+$nav-background: #ECF8F8;
 
 %handler-content-top-buffer {
   margin-top: 3.4rem;
@@ -65,17 +66,17 @@
 }
 
 .navbar-default {
-  background-color: #f8f8f8;
-  min-width: 320px;
-  width: 100%;
-  position: fixed;
-  top: 0;
-  z-index: 3;
   @extend %default-navbar-line-height;
   @extend %mobile-menu-slidebar-translation;
-  transition-property: left;
-  left: 0;
   @include unselectable;
+  background-color: $nav-background;
+  left: 0;
+  min-width: 320px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 3;
+  transition-property: left;
 
   .navbar-header, {
     height: 100%;
@@ -134,12 +135,14 @@
 }
 
 .mobile-slidebar-drawer-wrap {
+  @extend %mobile-menu-slidebar-translation;
+  background-color: white;
+  height: 100%;
   margin-left: -100%;
   position: fixed;
-  width: 80%;
   top: 0;
-  @extend %mobile-menu-slidebar-translation;
   transition-property: margin-left;
+  width: 80%;
 }
 
 /*
@@ -200,7 +203,6 @@
 }
 
 .navbar-mobile-container {
-  background-color: #ffffff;
   @include unselectable;
   .navbar-mobile-item-container {
     border-bottom: 1px solid #efeeee;
