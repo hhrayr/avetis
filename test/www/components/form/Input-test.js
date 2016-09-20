@@ -91,7 +91,7 @@ describe('InputComponent', () => {
     const renderer = TestUtils.createRenderer();
     renderer.render(<Input />);
     const label = renderer.getRenderOutput().props.children[0];
-    expect(label.props.children).toNotExist();
+    expect(label.props.children[0]).toEqual('');
     done();
   });
 
@@ -99,7 +99,7 @@ describe('InputComponent', () => {
     const renderer = TestUtils.createRenderer();
     renderer.render(<Input label="label-text" placeholder="placeholder-text" />);
     const label = renderer.getRenderOutput().props.children[0];
-    expect(label.props.children).toBe('placeholder-text');
+    expect(label.props.children[0]).toBe('placeholder-text');
     done();
   });
 
@@ -107,7 +107,7 @@ describe('InputComponent', () => {
     const renderer = TestUtils.createRenderer();
     renderer.render(<Input label="label-text" />);
     const label = renderer.getRenderOutput().props.children[0];
-    expect(label.props.children).toBe('label-text');
+    expect(label.props.children[0]).toBe('label-text');
     done();
   });
 
@@ -169,8 +169,39 @@ describe('InputComponent', () => {
     const renderer = TestUtils.createRenderer();
     renderer.render(<Input label="label-text" placeholder="placeholder-text" value="test" />);
     const label = renderer.getRenderOutput().props.children[0];
-    expect(label.props.children).toBe('label-text');
+    expect(label.props.children[0]).toBe('label-text');
     done();
+  });
+
+  it('should render an info icon if provided', (done) => {
+    jsdom.env('<html><body></body></html>', [], (err, window) => {
+      global.window = window;
+      global.document = window.document;
+      global.navigator = window.navigator;
+
+      const inputComponent = TestUtils.renderIntoDocument(
+        <Input id="test-input" infotext="test-infotext" />
+      );
+      const inputDomNode = TestUtils.findRenderedDOMComponentWithTag(
+         inputComponent, 'input'
+      );
+      const labelDomNode = TestUtils.findRenderedDOMComponentWithTag(
+        inputComponent, 'label');
+
+      expect(labelDomNode.children.length).toEqual(0);
+
+      inputDomNode.value = 'test';
+      TestUtils.Simulate.focus(inputDomNode);
+
+      expect(labelDomNode.children.length).toEqual(1);
+      expect(labelDomNode.children[0].className).toEqual('info-icon');
+
+      delete global.window;
+      delete global.document;
+      delete global.navigator;
+
+      done();
+    });
   });
 
   it('should render an error validation message', (done) => {
@@ -234,3 +265,4 @@ describe('InputComponent', () => {
     });
   });
 });
+

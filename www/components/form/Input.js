@@ -16,7 +16,16 @@ class Input extends BaseFormElement {
     return this.state.labelPosition !== nextState.labelPosition ||
       this.props.disabled !== nextProps.disabled ||
       this.props.error !== nextProps.error ||
-      this.props.isInValid !== nextProps.isInValid;
+      this.props.isInValid !== nextProps.isInValid ||
+      this.props.type !== nextProps.type ||
+      this.props.value !== nextProps.value;
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.value && this.getValue() !== nextProps.value) {
+      this.setValue(nextProps.value);
+      this.updateLabelPosition();
+    }
   }
 
   updateLabelPosition() {
@@ -89,7 +98,7 @@ class Input extends BaseFormElement {
     if (this.state.labelPosition === 'top') {
       labelText = this.props.label;
     }
-    return labelText;
+    return labelText || '';
   }
 
   getMaxLengthAttr() {
@@ -113,7 +122,10 @@ class Input extends BaseFormElement {
         id={`${this.props.id}-container`}
         ref={`${this.props.id}-container`}
       >
-        <label htmlFor={this.props.id}>{this.getLabelText()}</label>
+        <label htmlFor={this.props.id}>
+          {this.getLabelText()}
+          {this.state.labelPosition === 'top' ? this.renderInfoIcon() : null}
+        </label>
         <input
           ref="input"
           className={`form-control ${this.props.componentClass || ''}`}
@@ -142,7 +154,6 @@ Input.defaultProps = {
 
 Input.propTypes = {
   label: React.PropTypes.string,
-  id: React.PropTypes.string,
   segmentId: React.PropTypes.any,
   name: React.PropTypes.string,
   placeholder: React.PropTypes.string,

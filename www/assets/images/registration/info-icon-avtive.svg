@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="40" height="40" viewBox="0 0 40 40">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #007fa3;
+      }
+    </style>
+  </defs>
+  <circle class="cls-1" cx="20" cy="20" r="20"/>
+  <image id="info_Kopie_5" data-name="info Kopie 5" x="14" y="8" width="12" height="24" xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAYCAMAAAD57OxYAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAA9lBMVEUAAAD///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////8AAACxCeNuAAAAUHRSTlMALML73FsO6P5FUaFNmwna+jcdqeDFRgNPmrq0bAYjzLck6SHRvsMlct70BXOIOy9/ZM8TuXFiEhQzMQz5uAfNpTmg8iBE/FkN7Pdhs/XfmNYYuIgAAAABYktHRACIBR1IAAAACXBIWXMAAAsSAAALEgHS3X78AAAAp0lEQVQY04WQRRIDMQwEJ8zMzMzMzKz/vyZrKffMqbtGUrkMqOj0BqMJErOFiKw2ETupOEScLC4Rt0djr++35A8EQ2H8SSQaiyeSKeZ0ho9lFefyJCkAqSKVyiwVoEo1c01xvQE0W+0OFwm51mXpifQVewfMBS6GUoxYxiIlnppMZ3NgsVSyWm9oC+x4qrqnwxE4sZzJetFWrje2+0P+6fk6vz/ay/AF4tcplhLBtwMAAAAASUVORK5CYII="/>
+</svg>
