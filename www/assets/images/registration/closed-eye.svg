@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="55px" height="55px" viewBox="0 0 55 55" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 3.8.3 (29802) - http://www.bohemiancoding.com/sketch -->
+    <title>Artboard 12 Copy 3</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard-12-Copy-3">
+            <g id="toggle" transform="translate(17.000000, 21.000000)">
+                <path d="M10,0 C7.243,0 5,2.243 5,5 C5,7.757 7.243,10 10,10 C12.757,10 15,7.757 15,5 C15,2.243 12.757,0 10,0" id="Fill-1" fill="#DEDBD8"></path>
+                <path d="M18,5 C18,9.419 14.418,13 10,13 C5.582,13 2,9.419 2,5" id="Stroke-3" stroke="#DEDBD8" stroke-width="2"></path>
+                <path d="M20,4.8415 C17.345,2.4605 13.847,0.9995 10,0.9995 C6.153,0.9995 2.655,2.4605 0,4.8415" id="Stroke-5" stroke="#DEDBD8" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path>
+            </g>
+            <path d="M20,35.0889421 L34.4440918,17.5444711" id="Line" stroke="#DEDBD8" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path>
+        </g>
+    </g>
+</svg>

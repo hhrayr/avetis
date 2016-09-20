@@ -1,10 +1,31 @@
 import React from 'react';
+import { OverlayTrigger, Tooltip } from 'react-bootstrap';
 
 class BaseFormElement extends React.Component {
   renderErrorMessage() {
     return (
       <span className="error">{this.props.error}</span>
     );
+  }
+
+  renderTooltip() {
+    return <Tooltip id={`${this.props.id}-tooltip`}>{this.props.infotext}</Tooltip>;
+  }
+
+  renderInfoIcon() {
+    if (this.props.infotext) {
+      return (
+        <OverlayTrigger
+          id={`${this.props.id}-overlay-trigger`}
+          overlay={this.renderTooltip()}
+          placement="right"
+          trigger="click"
+        >
+          <span className="info-icon" />
+        </OverlayTrigger>
+      );
+    }
+    return null;
   }
 
   getValue() {
@@ -34,6 +55,7 @@ class BaseFormElement extends React.Component {
 
 BaseFormElement.propTypes = {
   validation: React.PropTypes.object,
+  id: React.PropTypes.string,
   error: React.PropTypes.string,
   isInValid: React.PropTypes.bool,
   disabled: React.PropTypes.bool,
