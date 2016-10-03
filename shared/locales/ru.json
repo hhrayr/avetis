@@ -14,5 +14,13 @@
       "homeUseCases": null,
       "registration": null
     }
+  },
+  "home": {
+    "intro": {
+      "text": null
+    },
+    "pricing": {
+      "text": null
+    }
   }
 }

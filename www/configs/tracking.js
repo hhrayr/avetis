@@ -1,10 +1,23 @@
 export default {
-  googleApiKey: 'TBD',
-  bingApiKey: 'TBD',
   gtm: {
     id: 'TBD',
   },
   ga: {
-    id: 'TBD',
+    business: {
+      id: 'TBD',
+      cd: {
+        'custom-dim-1': 1,
+        'custom-dim-2': 2,
+        'custom-dim-3': 3,
+      },
+    },
+    dev: {
+      id: 'TBD',
+      cd: {
+        'custom-dim-1': 1,
+        'custom-dim-2': 2,
+        'custom-dim-3': 3,
+      },
+    },
   },
 };

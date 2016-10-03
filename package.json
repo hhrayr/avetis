@@ -39,6 +39,7 @@
     "fluxible-addons-react": "^0.2.0",
     "fluxible-router": "^0.4.0",
     "geoip-lite": "^1.1.7",
+    "google-libphonenumber": "^2.0.2",
     "google-maps": "^3.2.1",
     "locale": "0.0.21",
     "lodash": "^4.5.1",
@@ -58,6 +59,7 @@
     "superagent": "^2.0.0",
     "superagent-proxy": "^1.0.0",
     "swipe-js-iso": "^2.0.1",
+    "universal-analytics": "^0.4.6",
     "webpack": "^1.12.4",
     "xmlbuilder": "^8.1.0"
   },

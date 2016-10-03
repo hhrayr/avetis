@@ -2,6 +2,7 @@ import React from 'react';
 import { forEach } from 'lodash';
 import Segment from './Segment';
 import Input from './Input';
+import Textarea from './Textarea';
 import Password from './Password';
 import Checkbox from './Checkbox';
 import RadioButtonList from './RadioButtonList';
@@ -22,23 +23,34 @@ class FormBuilder extends React.Component {
   }
 
   onElementValueChange(params) {
-    this.props.onElementValueChange(params);
+    if (this.props.onElementValueChange) {
+      this.props.onElementValueChange(params);
+    }
   }
 
   onElementValueChangeBulk(params) {
-    this.props.onElementValueChangeBulk(params);
+    if (this.props.onElementValueChangeBulk) {
+      this.props.onElementValueChangeBulk(params);
+    }
   }
 
   onElementFocus(params) {
-    this.props.onElementFocus(params);
+    if (this.props.onElementFocus) {
+      this.props.onElementFocus(params);
+    }
   }
 
   onElementBlur(params) {
-    this.props.onElementBlur(params);
+    if (this.props.onElementBlur) {
+      this.props.onElementBlur(params);
+    }
   }
 
   onSubmitForm(e) {
     e.preventDefault();
+    if (this.props.onSubmit) {
+      this.props.onSubmit();
+    }
     return false;
   }
 
@@ -101,6 +113,7 @@ class FormBuilder extends React.Component {
   renderElement(element, segmentId) {
     switch (element.type) {
       case 'input': return this.renderInputElement(element, segmentId);
+      case 'textarea': return this.renderTextareaElement(element, segmentId);
       case 'password': return this.renderPasswordElement(element, segmentId);
       case 'select': return this.renderSelectElement(element, segmentId);
       case 'phoneNumber': return this.renderPhoneNumberElement(element, segmentId);
@@ -116,6 +129,30 @@ class FormBuilder extends React.Component {
   renderInputElement(element, segmentId) {
     return (
       <Input
+        key={element.id}
+        id={element.id}
+        segmentId={segmentId}
+        type={element.type}
+        name={element.id}
+        value={element.value}
+        label={element.label}
+        placeholder={element.placeholder}
+        validation={element.validation}
+        error={element.error}
+        onValueChange={this.onElementValueChange}
+        onBlur={this.onElementBlur}
+        onFocus={this.onElementFocus}
+        componentStyle={element.style}
+        isInValid={element.isInValid}
+        infotext={element.infotext}
+        disabled={element.disabled}
+      />
+    );
+  }
+
+  renderTextareaElement(element, segmentId) {
+    return (
+      <Textarea
         key={element.id}
         id={element.id}
         segmentId={segmentId}
@@ -336,7 +373,7 @@ FormBuilder.propTypes = {
   onElementValueChangeBulk: React.PropTypes.func,
   onElementFocus: React.PropTypes.func,
   onElementBlur: React.PropTypes.func,
-  onLoadPromocode: React.PropTypes.func,
+  onSubmit: React.PropTypes.func,
 };
 
 export default FormBuilder;

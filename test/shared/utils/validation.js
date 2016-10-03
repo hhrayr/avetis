@@ -15,7 +15,6 @@ import {
   isCreditCardValidity,
   isIBAN,
   isBIC,
-  isCodiceFiscale,
 } from '../../../shared/utils/validation';
 
 describe('Validation Utils', () => {
@@ -393,58 +392,6 @@ describe('Validation Utils', () => {
     }
 
     clock.restore();
-    done();
-  });
-
-  it('should accept correct Codice Fiscales', (done) => {
-    const validCodiceFiscales = [
-      { value: 'RSSMRA80A01C004M',
-        validation: { dateOfBirth: { year: 1980, month: 1, day: 1 }, gender: 'M' } },
-      { value: 'BRTRRT90R50C004S',
-        validation: { dateOfBirth: { year: 1990, month: 10, day: 10 }, gender: 'F' } },
-      { value: 'bmbPCL08H06F205D',
-        validation: { dateOfBirth: { year: 2008, month: 6, day: 6 }, gender: 'M' } },
-    ];
-
-    for (let i = 0; i < validCodiceFiscales.length; i++) {
-      expect(isCodiceFiscale(validCodiceFiscales[i].value,
-        validCodiceFiscales[i].validation)).toEqual(true);
-    }
-    done();
-  });
-
-  it('should notaccept incorrect Codice Fiscales', (done) => {
-    const invalidCodiceFiscales = [
-      { value: 'RSSMRA80A01C004M',
-        validation: { dateOfBirth: { year: 1981, month: 1, day: 1 }, gender: 'M' } },
-      { value: 'RSSMRA80A01C004M',
-        validation: { dateOfBirth: { year: 1980, month: 2, day: 1 }, gender: 'M' } },
-      { value: 'RSSMRA80A01C004M',
-        validation: { dateOfBirth: { year: 1980, month: 1, day: 3 }, gender: 'M' } },
-      { value: 'RSSMRA80A01C004M',
-        validation: { dateOfBirth: { year: 1980, month: 1, day: 1 }, gender: 'F' } },
-      { value: 'RSSMRA80A01C004M',
-        validation: { dateOfBirth: { month: 1, day: 1 }, gender: 'F' } },
-      { value: 'RSSMRA80A01C004M',
-        validation: { dateOfBirth: { year: 1980, month: 1, day: 1 } } },
-      { value: 'BRTRRT90R50C004S',
-        validation: { dateOfBirth: { year: 1990, month: 10, day: 10 }, gender: 'M' } },
-      { value: 'bmbPCL08H06F205E',
-        validation: { dateOfBirth: { year: 2008, month: 6, day: 6 }, gender: 'M' } },
-      {},
-      { validation: { } },
-    ];
-
-    for (let i = 0; i < invalidCodiceFiscales.length; i++) {
-      expect(isCodiceFiscale(invalidCodiceFiscales[i].value,
-        invalidCodiceFiscales[i].validation)).toEqual(false);
-    }
-
-    expect(isCodiceFiscale(null,
-      invalidCodiceFiscales[0].validation)).toEqual(false);
-    expect(isCodiceFiscale(undefined,
-      invalidCodiceFiscales[0].validation)).toEqual(false);
-
     done();
   });
 });

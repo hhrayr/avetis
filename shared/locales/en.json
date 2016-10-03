@@ -14,5 +14,13 @@
       "homeUseCases": "Use Cases",
       "registration": "Registration"
     }
+  },
+  "home": {
+    "intro": {
+      "text": "Start using Viber for your business today. This should be phrased in some other way. The main idea should be how cool it is to integrate viber into customer communication. This should be the main message we would like the visitor of the web site to understand. Viber, a messaging APP that is used by milions, that is why give the same UX to those customers who preffer Viber. Not changing too much on your side, add more communication channel for your customers. Make them feel more connected with your brands, by talking to you with the same channels as they do with their families and friends. Become closer to your customers by using the same comunication tools. The qeustion we should answer is"
+    },
+    "pricing": {
+      "text": "What we can earn money from? \n- Registering a unique alphanumeric senderID - HSBC???\n- Monthly fee for the Zendesk APP per agent\n- We can charge cost+VAS to our custoemrs\n- Stickers - we need to think about how to earn money from stickers. One idea that I have is to buy a set of stickers and use them during the conversation with the business in order to get some bonuses or something. Send us your photo, and we create emojis or stickers that look like you. "
+    }
   }
 }

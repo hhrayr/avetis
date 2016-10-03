@@ -41,9 +41,15 @@ const webpackConfig = {
         loader: 'style!css!sass',
       },
     ],
+    noParse: [
+      /\/libphonenumber\.js$/,
+    ],
   },
   node: {
     setImmediate: false,
+    fs: 'empty',
+    net: 'empty',
+    tls: 'empty',
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),

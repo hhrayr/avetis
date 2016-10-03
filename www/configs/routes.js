@@ -2,7 +2,7 @@ import _404 from '../components/_404';
 import Home from '../components/home/Home';
 import Features from '../components/Features';
 import Subpage from '../components/Subpage';
-import ContactUs from '../components/Subpage';
+import ContactUs from '../components/ContactUs';
 import Registration from '../components/Subpage';
 
 export default {
