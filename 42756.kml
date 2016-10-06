@@ -47,10 +47,10 @@
       </StyleMap>
       <Style id="dn_allowed_nm">
          <LineStyle>
-            <color>4c00ff55</color>
+            <color>4c00ff00</color>
          </LineStyle>
          <PolyStyle>
-            <color>4c00ff55</color>
+            <color>4c00ff00</color>
          </PolyStyle>
       </Style>
       <StyleMap id="dn_extended">
