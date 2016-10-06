@@ -65,10 +65,10 @@
       </StyleMap>
       <Style id="dn_extended_nm">
          <LineStyle>
-            <color>4c000000</color>
+            <color>ddFFEB3B</color>
          </LineStyle>
          <PolyStyle>
-            <color>4c000000</color>
+            <color>44FFFF00</color>
          </PolyStyle>
       </Style>
       <Folder>
