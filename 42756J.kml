@@ -1,0 +1,594 @@
+<?xml version="1.0" encoding="UTF-8"?><kml xmlns="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2">
+   <Document>
+      <name>CS-MIL_PROD.kml</name>
+      <StyleMap id="dn_poi">
+         <Pair>
+            <key>normal</key>
+            <styleUrl>#dn_poi_nm</styleUrl>
+         </Pair>
+         <Pair>
+            <key>highlight</key>
+            <styleUrl>#dn_poi_hl</styleUrl>
+         </Pair>
+      </StyleMap>
+      <Style id="dn_poi_nm"/>
+      <Style id="dn_poi_hl">
+         <IconStyle>
+            <scale>1.3</scale>
+         </IconStyle>
+      </Style>
+      <StyleMap id="dn_forbidden">
+         <Pair>
+            <key>normal</key>
+            <styleUrl>#dn_forbidden_nm</styleUrl>
+         </Pair>
+         <Pair>
+            <key>highlight</key>
+            <styleUrl>#dn_forbidden_nm</styleUrl>
+         </Pair>
+      </StyleMap>
+      <Style id="dn_forbidden_nm">
+         <LineStyle>
+            <color>4c0000ff</color>
+         </LineStyle>
+         <PolyStyle>
+            <color>4c0000ff</color>
+         </PolyStyle>
+      </Style>
+      <StyleMap id="dn_allowed">
+         <Pair>
+            <key>normal</key>
+            <styleUrl>#dn_allowed_nm</styleUrl>
+         </Pair>
+         <Pair>
+            <key>highlight</key>
+            <styleUrl>#dn_allowed_nm</styleUrl>
+         </Pair>
+      </StyleMap>
+      <Style id="dn_allowed_nm">
+         <LineStyle>
+            <color>4c00ff55</color>
+         </LineStyle>
+         <PolyStyle>
+            <color>4c00ff55</color>
+         </PolyStyle>
+      </Style>
+      <StyleMap id="dn_extended">
+         <Pair>
+            <key>normal</key>
+            <styleUrl>#dn_extended_nm</styleUrl>
+         </Pair>
+         <Pair>
+            <key>highlight</key>
+            <styleUrl>#dn_extended_nm</styleUrl>
+         </Pair>
+      </StyleMap>
+      <Style id="dn_extended_nm">
+         <LineStyle>
+            <color>yellow</color>
+         </LineStyle>
+         <PolyStyle>
+            <color>yellow</color>
+         </PolyStyle>
+      </Style>
+      <Folder>
+         <name>PROD</name>
+         <Folder>
+            <name>CS_MIL</name>
+
+            <Folder>
+               <name>forbiddenParkingAreas</name>
+               <Placemark>
+                  <name>forbiddenParkingAreas</name>
+                  <description>{"zoneId":"@MIL","type":"CITY","name":"Via Bertini"}</description>
+                  <styleUrl>#dn_forbidden</styleUrl>
+                  <Polygon>
+                     <outerBoundaryIs>
+                        <LinearRing>
+                           <coordinates>9.173049,45.483098,0 9.17184,45.482372,0 9.170013,45.481269,0 9.169898,45.481168,0 9.169787,45.48107,0 9.16984,45.481052,0 9.169948,45.481153,0 9.170053,45.481238,0 9.170138,45.481286,0 9.17041,45.481442,0 9.170606,45.481559,0 9.170786,45.481671,0 9.171148,45.481894,0 9.171869,45.482341,0 9.172471,45.482701,0 9.173078,45.483072,0 9.173049,45.483098,0</coordinates>
+                        </LinearRing>
+                     </outerBoundaryIs>
+                  </Polygon>
+               </Placemark>
+               <Placemark>
+                  <description>{"zoneId":"@MIL","type":"CITY","name":"Via Aleardi"}</description>
+                  <styleUrl>#dn_forbidden</styleUrl>
+                  <name>forbiddenParkingAreas</name>
+                  <Polygon>
+                     <outerBoundaryIs>
+                        <LinearRing>
+                           <coordinates>9.172451,45.483691,0 9.173208,45.482943,0 9.173529,45.482572,0 9.174509,45.481535,0 9.174656,45.481311,0 9.174723,45.481316,0 9.174534,45.48159,0 9.173544,45.482635,0 9.172559,45.483686,0 9.172451,45.483691,0</coordinates>
+                        </LinearRing>
+                     </outerBoundaryIs>
+                  </Polygon>
+               </Placemark>
+               <Placemark>
+                  <description>{"zoneId":"@MIL","type":"CITY","name":"Via Venafro"}</description>
+                  <styleUrl>#dn_forbidden</styleUrl>
+                  <name>forbiddenParkingAreas</name>
+                  <Polygon>
+                     <outerBoundaryIs>
+                        <LinearRing>
+                           <coordinates>9.170641,45.48165,0 9.170697,45.481684,0 9.170165,45.482172,0 9.1701,45.482136,0 9.170641,45.48165,0</coordinates>
+                        </LinearRing>
+                     </outerBoundaryIs>
+                  </Polygon>
+               </Placemark>
+               <Placemark>
+                  <description>{"zoneId":"@MIL","type":"CITY","name":"via Procaccini"}</description>
+                  <styleUrl>#dn_forbidden</styleUrl>
+                  <name>forbiddenParkingAreas</name>
+                  <Polygon>
+                     <outerBoundaryIs>
+                        <LinearRing>
+                           <coordinates>9.170623,45.483603,0 9.170888,45.483326,0 9.171145,45.483038,0 9.171704,45.482487,0 9.17303,45.481174,0 9.173131,45.481182,0 9.171903,45.482396,0 9.171288,45.483,0 9.170985,45.483313,0 9.170708,45.483632,0 9.170653,45.483618,0 9.170623,45.483603,0</coordinates>
+                        </LinearRing>
+                     </outerBoundaryIs>
+                  </Polygon>
+               </Placemark>
+               <Placemark>
+                  <description>{"zoneId":"@MIL","type":"CITY","name":"Via Fioravanti"}</description>
+                  <styleUrl>#dn_forbidden</styleUrl>
+                  <name>forbiddenParkingAreas</name>
+                  <Polygon>
+                     <outerBoundaryIs>
+                        <LinearRing>
+                           <coordinates>9.174379,45.481761,0 9.17442,45.481716,0 9.17608,45.482424,0 9.17703,45.482818,0 9.177623,45.483056,0 9.178205,45.483281,0 9.178186,45.483317,0 9.178155,45.483348,0 9.174379,45.481761,0</coordinates>
+                        </LinearRing>
+                     </outerBoundaryIs>
+                  </Polygon>
+               </Placemark>
+               <Placemark>
+                  <description>{"zoneId":"@MIL","type":"CITY","name":"Via Messina"}</description>
+                  <styleUrl>#dn_forbidden</styleUrl>
+                  <name>forbiddenParkingAreas</name>
+                  <Polygon>
+                     <outerBoundaryIs>
+                        <LinearRing>
+                           <coordinates>9.174944,45.483874,0 9.175026,45.483742,0 9.17513,45.483455,0 9.175268,45.483057,0 9.175551,45.482258,0 9.175609,45.482282,0 9.175344,45.483073,0 9.175205,45.483468,0 9.175083,45.483766,0 9.175007,45.483879,0 9.174944,45.483874,0</coordinates>
+                        </LinearRing>
+                     </outerBoundaryIs>
+                  </Polygon>
+               </Placemark>
+               <Placemark>
+                  <description>{"zoneId":"@MIL","type":"CITY","name":"Via Niccolini"}</description>
+                  <styleUrl>#dn_forbidden</styleUrl>
+                  <name>forbiddenParkingAreas</name>
+                  <Polygon>
+                     <outerBoundaryIs>
+                        <LinearRing>
+                           <coordinates>9.176854,45.483964,0 9.176863,45.483884,0 9.17697,45.483894,0 9.176962,45.483982,0 9.176854,45.483964,0</coordinates>
+                        </LinearRing>
+                     </outerBoundaryIs>
+                  </Polygon>
+               </Placemark>
+               <Placemark>
+                  <description>{"zoneId":"@MIL","type":"CITY","name":"Via Bramante"}</description>
+                  <styleUrl>#dn_forbidden</styleUrl>
+                  <name>forbiddenParkingAreas</name>
+                  <Polygon>
+                     <outerBoundaryIs>
+                        <LinearRing>
+                           <coordinates>9.177364,45.48407,0 9.178181,45.483317,0 9.178783,45.482022,0 9.179099,45.481374,0 9.179384,45.480721,0 9.179983,45.479287,0 9.180514,45.477854,0 9.180703,45.477637,0 9.180772,45.477652,0 9.180567,45.47789,0 9.180033,45.479312,0 9.179463,45.480732,0 9.17908,45.481614,0 9.1787,45.482483,0 9.17849,45.482917,0 9.178262,45.483344,0 9.17746,45.484104,0 9.177364,45.48407,0</coordinates>
+                        </LinearRing>
+                     </outerBoundaryIs>
+                  </Polygon>
+               </Placemark>
+               <Placemark>
+                  <description>{"zoneId":"@MIL","type":"CITY","name":"Via Morazzone"}</description>
+                  <styleUrl>#dn_forbidden</styleUrl>
+                  <name>forbiddenParkingAreas</name>
+                  <Polygon>
+                     <outerBoundaryIs>
+                        <LinearRing>
+                           <coordinates>9.173778,45.480572,0 9.173496,45.480407,0 9.173219,45.480218,0 9.173012,45.479959,0 9.172896,45.479733,0 9.172984,45.479739,0 9.173139,45.479973,0 9.173303,45.480173,0 9.173839,45.480522,0 9.173778,45.480572,0</coordinates>
+                        </LinearRing>
+                     </outerBoundaryIs>
+                  </Polygon>
+               </Placemark>
+               <Placemark>
+                  <description>{"zoneId":"@MIL","type":"CITY","name":"Via Giordano Bruno"}</description>
+                  <styleUrl>#dn_forbidden</styleUrl>
+                  <name>forbiddenParkingAreas</name>
+                  <Polygon>
+                     <outerBoundaryIs>
+                        <LinearRing>
+                           <coordinates>9.173863,45.480596,0 9.1739,45.480524,0 9.177298,45.480803,0 9.177285,45.480889,0 9.173863,45.480596,0</coordinates>
+                        </LinearRing>
+                     </outerBoundaryIs>
+                  </Polygon>
+               </Placemark>
+               <Placemark>
+                  <description>{"zoneId":"@MIL","type":"CITY","name":"Via Giusti"}</description>
+                  <styleUrl>#dn_forbidden</styleUrl>
+                  <name>forbiddenParkingAreas</name>
+                  <Polygon>
+                     <outerBoundaryIs>
+                        <LinearRing>
+                           <coordinates>9.173113,45.479684,0 9.173128,45.479606,0 9.176298,45.480035,0 9.177886,45.48025,0 9.179484,45.480455,0 9.179447,45.480536,0 9.173113,45.479684,0</coordinates>
+                        </LinearRing>
+                     </outerBoundaryIs>
+                  </Polygon>
+               </Placemark>
+               <Placemark>
+                  <description>{"zoneId":"@MIL","type":"CITY","name":"Via Braccio da Montone"}</description>
+                  <styleUrl>#dn_forbidden</styleUrl>
+                  <name>forbiddenParkingAreas</name>
+                  <Polygon>
+                     <outerBoundaryIs>
+                        <LinearRing>
+                           <coordinates>9.177934,45.480338,0 9.178014,45.480349,0 9.177934,45.48082,0 9.177882,45.481146,0 9.177862,45.481511,0 9.177778,45.481504,0 9.177803,45.481334,0 9.177792,45.481118,0 9.177934,45.480338,0</coordinates>
+                        </LinearRing>
+                     </outerBoundaryIs>
+                  </Polygon>
+               </Placemark>
+               <Placemark>
+                  <description>{"zoneId":"@MIL","type":"CITY","name":"Via Giorgione"}</description>
+                  <styleUrl>#dn_forbidden</styleUrl>
+                  <name>forbiddenParkingAreas</name>
+                  <Polygon>
+                     <outerBoundaryIs>
+                        <LinearRing>
+                           <coordinates>9.179553,45.480534,0 9.179577,45.480473,0 9.180366,45.480587,0 9.181166,45.4807,0 9.181179,45.480754,0 9.180344,45.480643,0 9.179553,45.480534,0</coordinates>
+                        </LinearRing>
+                     </outerBoundaryIs>
+                  </Polygon>
+               </Placemark>
+               <Placemark>
+                  <description>{"zoneId":"@MIL","type":"CITY","name":"Via Guercino"}</description>
+                  <styleUrl>#dn_forbidden</styleUrl>
+                  <name>forbiddenParkingAreas</name>
+                  <Polygon>
+                     <outerBoundaryIs>
+                        <LinearRing>
+                           <coordinates>9.179595,45.48047,0 9.179931,45.480355,0 9.180471,45.480224,0 9.181028,45.480092,0 9.181043,45.480137,0 9.180483,45.480276,0 9.179899,45.480415,0 9.179701,45.48049,0 9.179606,45.480476,0 9.179595,45.48047,0</coordinates>
+                        </LinearRing>
+                     </outerBoundaryIs>
+                  </Polygon>
+               </Placemark>
+               <Placemark>
+                  <description>{"zoneId":"@MIL","type":"CITY","name":"Via Verga"}</description>
+                  <styleUrl>#dn_forbidden</styleUrl>
+                  <name>forbiddenParkingAreas</name>
+                  <Polygon>
+                     <outerBoundaryIs>
+                        <LinearRing>
+                           <coordinates>9.176037,45.479988,0 9.176198,45.478946,0 9.176317,45.478942,0 9.176147,45.480005,0 9.176037,45.479988,0</coordinates>
+                        </LinearRing>
+                     </outerBoundaryIs>
+                  </Polygon>
+               </Placemark>
+               <Placemark>
+                  <description>{"zoneId":"@MIL","type":"CITY","name":"Via Rosmini"}</description>
+                  <styleUrl>#dn_forbidden</styleUrl>
+                  <name>forbiddenParkingAreas</name>
+                  <Polygon>
+                     <outerBoundaryIs>
+                        <LinearRing>
+                           <coordinates>9.174659,45.481278,0 9.17478,45.480019,0 9.174864,45.479391,0 9.174975,45.478758,0 9.175061,45.478724,0 9.174872,45.480032,0 9.17474,45.481285,0 9.174659,45.481278,0</coordinates>
+                        </LinearRing>
+                     </outerBoundaryIs>
+                  </Polygon>
+               </Placemark>
+               <Placemark>
+                  <description>{"type":"CITY","name":"Via Alfieri","zoneId":"@MIL"}</description>
+                  <styleUrl>#dn_forbidden</styleUrl>
+                  <name>forbiddenParkingAreas</name>
+                  <Polygon>
+                     <outerBoundaryIs>
+                        <LinearRing>
+                           <coordinates>9.177018,45.478924,0 9.176096,45.478937,0 9.174487,45.478929,0 9.174608,45.478888,0 9.174993,45.478896,0 9.176007,45.478905,0 9.177023,45.478881,0 9.177018,45.478924,0</coordinates>
+                        </LinearRing>
+                     </outerBoundaryIs>
+                  </Polygon>
+               </Placemark>
+               <Placemark>
+                  <styleUrl>#dn_forbidden</styleUrl>
+                  <name>forbiddenParkingAreas</name>
+                  <description>{"zoneId":"@MIL","type":"CITY","name":"Via Giannone"}</description>
+                  <Polygon>
+                     <outerBoundaryIs>
+                        <LinearRing>
+                           <coordinates>9.17816,45.47903,0 9.17815,45.47896,0 9.180062,45.47905,0 9.180039,45.479115,0 9.17816,45.47903,0</coordinates>
+                        </LinearRing>
+                     </outerBoundaryIs>
+                  </Polygon>
+               </Placemark>
+               <Placemark>
+                  <description>{"zoneId":"@MIL","type":"CITY","name":"Via Balestrieri"}</description>
+                  <styleUrl>#dn_forbidden</styleUrl>
+                  <name>forbiddenParkingAreas</name>
+                  <Polygon>
+                     <outerBoundaryIs>
+                        <LinearRing>
+                           <coordinates>9.17758,45.478463,0 9.177298,45.477518,0 9.177376,45.477481,0 9.177667,45.478449,0 9.17758,45.478463,0</coordinates>
+                        </LinearRing>
+                     </outerBoundaryIs>
+                  </Polygon>
+               </Placemark>
+               <Placemark>
+                  <description>{"zoneId":"@MIL","type":"CITY","name":"Piazza Santissima"}</description>
+                  <styleUrl>#dn_forbidden</styleUrl>
+                  <name>forbiddenParkingAreas</name>
+                  <Polygon>
+                     <outerBoundaryIs>
+                        <LinearRing>
+                           <coordinates>9.177609,45.479303,0 9.177631,45.479148,0 9.177599,45.479096,0 9.177741,45.47896,0 9.178138,45.478966,0 9.178148,45.479025,0 9.177776,45.479018,0 9.177788,45.479124,0 9.177823,45.479126,0 9.177866,45.47923,0 9.178534,45.479614,0 9.178641,45.479702,0 9.178617,45.479824,0 9.178439,45.479725,0 9.177816,45.479317,0 9.177609,45.479303,0</coordinates>
+                        </LinearRing>
+                     </outerBoundaryIs>
+                  </Polygon>
+               </Placemark>
+               <Placemark>
+                  <description>{"zoneId":"@MIL","type":"CITY","name":"Piazza Santissima Trinit\u0413&amp;amp;nbsp;"}</description>
+                  <styleUrl>#dn_forbidden</styleUrl>
+                  <name>forbiddenParkingAreas</name>
+                  <Polygon>
+                     <outerBoundaryIs>
+                        <LinearRing>
+                           <coordinates>9.177609,45.479303,0 9.177631,45.479148,0 9.177599,45.479096,0 9.177741,45.47896,0 9.178138,45.478966,0 9.178148,45.479025,0 9.177776,45.479018,0 9.177788,45.479124,0 9.177823,45.479126,0 9.177866,45.47923,0 9.178534,45.479614,0 9.178641,45.479702,0 9.178617,45.479824,0 9.178439,45.479725,0 9.177816,45.479317,0 9.177609,45.479303,0</coordinates>
+                        </LinearRing>
+                     </outerBoundaryIs>
+                  </Polygon>
+               </Placemark>
+               <Placemark>
+                  <name>forbiddenParkingAreas</name>
+                  <description>{"zoneId":"@MIL","type":"CITY","name":"Alzaia Naviglio Grande"}</description>
+                  <styleUrl>#dn_forbidden</styleUrl>
+                  <Polygon>
+                     <outerBoundaryIs>
+                        <LinearRing>
+                           <coordinates>9.176792,45.452456,0 9.176693,45.452308,0 9.175286,45.451969,0 9.17372,45.451674,0 9.172192,45.451353,0 9.171182,45.451166,0 9.168376,45.45058,0 9.16825,45.450652,0 9.168201,45.450614,0 9.168326,45.45052,0 9.175318,45.451943,0 9.176393,45.452196,0 9.176738,45.452288,0 9.17684,45.452432,0 9.176792,45.452456,0</coordinates>
+                        </LinearRing>
+                     </outerBoundaryIs>
+                  </Polygon>
+               </Placemark>
+               <Placemark>
+                  <description>{"zoneId":"@MIL","type":"CITY","name":"Via Corsico"}</description>
+                  <styleUrl>#dn_forbidden</styleUrl>
+                  <name>forbiddenParkingAreas</name>
+                  <Polygon>
+                     <outerBoundaryIs>
+                        <LinearRing>
+                           <coordinates>9.173064,45.452974,0 9.17337,45.452315,0 9.173687,45.451668,0 9.173747,45.451681,0 9.173143,45.452974,0 9.173064,45.452974,0</coordinates>
+                        </LinearRing>
+                     </outerBoundaryIs>
+                  </Polygon>
+               </Placemark>
+               <Placemark>
+                  <description>{"zoneId":"@MIL","type":"CITY","name":"Via Casale"}</description>
+                  <styleUrl>#dn_forbidden</styleUrl>
+                  <name>forbiddenParkingAreas</name>
+                  <Polygon>
+                     <outerBoundaryIs>
+                        <LinearRing>
+                           <coordinates>9.169924,45.452287,0 9.170042,45.452257,0 9.170076,45.452223,0 9.171118,45.451156,0 9.1712,45.451175,0 9.170117,45.452271,0 9.169956,45.45234,0 9.169924,45.452287,0</coordinates>
+                        </LinearRing>
+                     </outerBoundaryIs>
+                  </Polygon>
+               </Placemark>
+               <Placemark>
+                  <description>{"zoneId":"@MIL","type":"CITY","name":"Ripa di Porta Ticinese"}</description>
+                  <styleUrl>#dn_forbidden</styleUrl>
+                  <name>forbiddenParkingAreas</name>
+                  <Polygon>
+                     <outerBoundaryIs>
+                        <LinearRing>
+                           <coordinates>9.177401,45.452248,0 9.177343,45.452218,0 9.177284,45.452203,0 9.176892,45.452118,0 9.175942,45.451919,0 9.174421,45.451598,0 9.171444,45.450978,0 9.171474,45.450936,0 9.17182,45.451032,0 9.172203,45.451116,0 9.172942,45.451265,0 9.174308,45.451537,0 9.177334,45.452175,0 9.177412,45.452203,0 9.177472,45.452242,0 9.177536,45.452276,0 9.177442,45.452276,0 9.177401,45.452248,0</coordinates>
+                        </LinearRing>
+                     </outerBoundaryIs>
+                  </Polygon>
+               </Placemark>
+               <Placemark>
+                  <description>{"zoneId":"@MIL","type":"CITY","name":"Alzaia Naviglio Pavese"}</description>
+                  <styleUrl>#dn_forbidden</styleUrl>
+                  <name>forbiddenParkingAreas</name>
+                  <Polygon>
+                     <outerBoundaryIs>
+                        <LinearRing>
+                           <coordinates>9.17794,45.45227,0 9.177759,45.451464,0 9.177551,45.450591,0 9.17713,45.448892,0 9.176738,45.447184,0 9.176529,45.446331,0 9.176294,45.445472,0 9.176378,45.445473,0 9.176827,45.447179,0 9.177238,45.448884,0 9.17802,45.452274,0 9.17794,45.45227,0</coordinates>
+                        </LinearRing>
+                     </outerBoundaryIs>
+                  </Polygon>
+               </Placemark>
+               <Placemark>
+                  <description>{"zoneId":"@MIL","type":"CITY","name":"Via Magolfa"}</description>
+                  <styleUrl>#dn_forbidden</styleUrl>
+                  <name>forbiddenParkingAreas</name>
+                  <Polygon>
+                     <outerBoundaryIs>
+                        <LinearRing>
+                           <coordinates>9.177753,45.451456,0 9.177025,45.451238,0 9.175792,45.450411,0 9.175619,45.450354,0 9.175436,45.450166,0 9.175382,45.450131,0 9.175416,45.450079,0 9.176313,45.45066,0 9.177079,45.451195,0 9.177377,45.451297,0 9.177737,45.451402,0 9.177753,45.451456,0</coordinates>
+                        </LinearRing>
+                     </outerBoundaryIs>
+                  </Polygon>
+               </Placemark>
+               <Placemark>
+                  <description>{"zoneId":"@MIL","type":"CITY","name":"Via Gola"}</description>
+                  <styleUrl>#dn_forbidden</styleUrl>
+                  <name>forbiddenParkingAreas</name>
+                  <Polygon>
+                     <outerBoundaryIs>
+                        <LinearRing>
+                           <coordinates>9.177129,45.448917,0 9.175276,45.44892,0 9.175272,45.448841,0 9.177107,45.44885,0 9.177129,45.448917,0</coordinates>
+                        </LinearRing>
+                     </outerBoundaryIs>
+                  </Polygon>
+               </Placemark>
+               <Placemark>
+                  <description>{"zoneId":"@MIL","type":"CITY","name":"Ripa di Porta Ticinese"}</description>
+                  <styleUrl>#dn_forbidden</styleUrl>
+                  <name>forbiddenParkingAreas</name>
+                  <Polygon>
+                     <outerBoundaryIs>
+                        <LinearRing>
+                           <coordinates>9.171303,45.450951,0 9.167875,45.450235,0 9.16786,45.450168,0 9.171347,45.450899,0 9.171303,45.450951,0</coordinates>
+                        </LinearRing>
+                     </outerBoundaryIs>
+                  </Polygon>
+               </Placemark>
+               <Placemark>
+                  <description>{"zoneId":"@MIL","type":"CITY","name":"Ripa di Porta Ticinese Big"}</description>
+                  <styleUrl>#dn_forbidden</styleUrl>
+                  <name>forbiddenParkingAreas</name>
+                  <Polygon>
+                     <outerBoundaryIs>
+                        <LinearRing>
+                           <coordinates>9.168956,45.450398,0 9.167848,45.450166,0 9.166248,45.449799,0 9.165975,45.449732,0 9.166194,45.449681,0 9.168158,45.449939,0 9.16925,45.450458,0 9.168956,45.450398,0</coordinates>
+                        </LinearRing>
+                     </outerBoundaryIs>
+                  </Polygon>
+               </Placemark>
+               <Placemark>
+                  <description>{"zoneId":"@MIL","type":"CITY","name":"Via E. Barsanti"}</description>
+                  <styleUrl>#dn_forbidden</styleUrl>
+                  <name>forbiddenParkingAreas</name>
+                  <Polygon>
+                     <outerBoundaryIs>
+                        <LinearRing>
+                           <coordinates>9.166223,45.449677,0 9.166834,45.448727,0 9.166925,45.448773,0 9.166318,45.449688,0 9.166223,45.449677,0</coordinates>
+                        </LinearRing>
+                     </outerBoundaryIs>
+                  </Polygon>
+               </Placemark>
+               <Placemark>
+                  <description>{"zoneId":"@MIL","type":"CITY","name":"Via Autari"}</description>
+                  <styleUrl>#dn_forbidden</styleUrl>
+                  <name>forbiddenParkingAreas</name>
+                  <Polygon>
+                     <outerBoundaryIs>
+                        <LinearRing>
+                           <coordinates>9.163206,45.447598,0 9.163376,45.447349,0 9.164164,45.447615,0 9.163976,45.447854,0 9.163206,45.447598,0</coordinates>
+                        </LinearRing>
+                     </outerBoundaryIs>
+                  </Polygon>
+               </Placemark>
+               <Placemark>
+                  <description>{"zoneId":"@MIL","type":"CITY","name":"Via A. Fumagalli"}</description>
+                  <styleUrl>#dn_forbidden</styleUrl>
+                  <name>forbiddenParkingAreas</name>
+                  <Polygon>
+                     <outerBoundaryIs>
+                        <LinearRing>
+                           <coordinates>9.169528,45.45052,0 9.170698,45.449131,0 9.1708,45.44918,0 9.169614,45.450546,0 9.169528,45.45052,0</coordinates>
+                        </LinearRing>
+                     </outerBoundaryIs>
+                  </Polygon>
+               </Placemark>
+               <Placemark>
+                  <description>{"zoneId":"@MIL","type":"CITY","name":"Via G. Borsi"}</description>
+                  <styleUrl>#dn_forbidden</styleUrl>
+                  <name>forbiddenParkingAreas</name>
+                  <Polygon>
+                     <outerBoundaryIs>
+                        <LinearRing>
+                           <coordinates>9.17518,45.447634,0 9.175175,45.447565,0 9.176808,45.447502,0 9.176827,45.447581,0 9.17518,45.447634,0</coordinates>
+                        </LinearRing>
+                     </outerBoundaryIs>
+                  </Polygon>
+               </Placemark>
+               <Placemark>
+                  <description>{"zoneId":"@MIL","type":"CITY","name":"Via M. Pichi"}</description>
+                  <styleUrl>#dn_forbidden</styleUrl>
+                  <name>forbiddenParkingAreas</name>
+                  <Polygon>
+                     <outerBoundaryIs>
+                        <LinearRing>
+                           <coordinates>9.175188,45.447642,0 9.175254,45.448555,0 9.175298,45.449611,0 9.176443,45.449562,0 9.176446,45.449641,0 9.175328,45.44969,0 9.175342,45.449992,0 9.17507,45.449881,0 9.175164,45.449694,0 9.175089,45.447632,0 9.175188,45.447642,0</coordinates>
+                        </LinearRing>
+                     </outerBoundaryIs>
+                  </Polygon>
+               </Placemark>
+               <Placemark>
+                  <description>{"zoneId":"@MIL","type":"CITY","name":"Via Gola"}</description>
+                  <styleUrl>#dn_forbidden</styleUrl>
+                  <name>forbiddenParkingAreas</name>
+                  <Polygon>
+                     <outerBoundaryIs>
+                        <LinearRing>
+                           <coordinates>9.175128,45.448952,0 9.174433,45.448964,0 9.173062,45.448954,0 9.17305,45.448851,0 9.175121,45.448853,0 9.175128,45.448952,0</coordinates>
+                        </LinearRing>
+                     </outerBoundaryIs>
+                  </Polygon>
+               </Placemark>
+               <Placemark>
+                  <description>{"zoneId":"@MIL","type":"CITY","name":"Via Magolfa"}</description>
+                  <styleUrl>#dn_forbidden</styleUrl>
+                  <name>forbiddenParkingAreas</name>
+                  <Polygon>
+                     <outerBoundaryIs>
+                        <LinearRing>
+                           <coordinates>9.175338,45.450097,0 9.175231,45.45001,0 9.17463,45.449809,0 9.174123,45.449753,0 9.173937,45.44971,0 9.173622,45.449606,0 9.173392,45.449462,0 9.173329,45.44937,0 9.173077,45.449399,0 9.173074,45.449141,0 9.173466,45.449374,0 9.173847,45.449581,0 9.174127,45.44966,0 9.174701,45.449766,0 9.175247,45.449959,0 9.175381,45.450059,0 9.175338,45.450097,0</coordinates>
+                        </LinearRing>
+                     </outerBoundaryIs>
+                  </Polygon>
+               </Placemark>
+               <Placemark>
+                  <description>{"zoneId":"@MIL","type":"CITY","name":"Via M. Fusetti"}</description>
+                  <styleUrl>#dn_forbidden</styleUrl>
+                  <name>forbiddenParkingAreas</name>
+                  <Polygon>
+                     <outerBoundaryIs>
+                        <LinearRing>
+                           <coordinates>9.175306,45.450087,0 9.175419,45.450161,0 9.174212,45.451369,0 9.174155,45.451393,0 9.174128,45.451322,0 9.174185,45.451271,0 9.175306,45.450087,0</coordinates>
+                        </LinearRing>
+                     </outerBoundaryIs>
+                  </Polygon>
+               </Placemark>
+               <Placemark>
+                  <description>{"zoneId":"@MIL","type":"CITY","name":"Via F. Argelati"}</description>
+                  <styleUrl>#dn_forbidden</styleUrl>
+                  <name>forbiddenParkingAreas</name>
+                  <Polygon>
+                     <outerBoundaryIs>
+                        <LinearRing>
+                           <coordinates>9.17412,45.451317,0 9.17378,45.450986,0 9.173115,45.450355,0 9.172824,45.450127,0 9.172538,45.449929,0 9.172581,45.449894,0 9.173005,45.450175,0 9.173422,45.450503,0 9.173764,45.450859,0 9.174174,45.451263,0 9.17412,45.451317,0</coordinates>
+                        </LinearRing>
+                     </outerBoundaryIs>
+                  </Polygon>
+               </Placemark>
+               <Placemark>
+                  <description>{"zoneId":"@MIL","type":"CITY","name":"Via P. Paoli"}</description>
+                  <styleUrl>#dn_forbidden</styleUrl>
+                  <name>forbiddenParkingAreas</name>
+                  <Polygon>
+                     <outerBoundaryIs>
+                        <LinearRing>
+                           <coordinates>9.171312,45.450955,0 9.172334,45.449916,0 9.172431,45.44995,0 9.171422,45.450977,0 9.171312,45.450955,0</coordinates>
+                        </LinearRing>
+                     </outerBoundaryIs>
+                  </Polygon>
+               </Placemark>
+               <Placemark>
+                  <description>{"zoneId":"@MIL","type":"CITY","name":"forbidden area aquatic parc"}</description>
+                  <styleUrl>#dn_forbidden</styleUrl>
+                  <name>forbiddenParkingAreas</name>
+                  <Polygon>
+                     <outerBoundaryIs>
+                        <LinearRing>
+                           <coordinates>9.080164,45.470585,0 9.084391,45.468487,0 9.090024,45.469668,0 9.090813,45.468846,0 9.092251,45.469086,0 9.092485,45.468594,0 9.093148,45.468806,0 9.093853,45.467582,0 9.091215,45.466827,0 9.091425,45.466509,0 9.092721,45.466869,0 9.094233,45.464276,0 9.092626,45.463755,0 9.093738,45.461887,0 9.096644,45.462559,0 9.097143,45.461301,0 9.098965,45.461496,0 9.09956,45.460686,0 9.101638,45.461146,0 9.102534,45.45935,0 9.107651,45.46039,0 9.107615,45.461593,0 9.108356,45.46174,0 9.107842,45.463028,0 9.109908,45.463499,0 9.109097,45.465375,0 9.109232,45.466869,0 9.109899,45.467491,0 9.109338,45.469471,0 9.106399,45.468908,0 9.100585,45.476925,0 9.098911,45.476443,0 9.091637,45.475525,0 9.087573,45.473902,0 9.087088,45.474668,0 9.086112,45.47451,0 9.08299,45.47375,0 9.082357,45.474269,0 9.080393,45.473155,0 9.080164,45.470585,0</coordinates>
+                        </LinearRing>
+                     </outerBoundaryIs>
+                  </Polygon>
+               </Placemark>
+            </Folder>
+            <Folder>
+               <name>allowedParkingAreas</name>
+               <Placemark>
+                  <description>{"zoneId":"EXTENDED_1_MIL@MIL","type":"CITY","name":"Extended Business Area","events":[{"type":"driveIn","template":"EnteredAllowedWithFee"},{"type":"driveOut","template":"LeftAllowed"}],"content":{},"priority":"2"}</description>
+                  <styleUrl>#dn_extended</styleUrl>
+                  <name>allowedParkingAreas</name>
+                  <Polygon>
+                     <outerBoundaryIs>
+                        <LinearRing>
+                           <coordinates>9.170843,45.400469,0 9.173818,45.400494,0 9.178056,45.405583,0 9.179256,45.407233,0 9.18021,45.414503,0 9.18201,45.41438,0 9.18225,45.417827,0 9.180924,45.421598,0 9.181014,45.425125,0 9.1799,45.427776,0 9.18344,45.427913,0 9.18681,45.429848,0 9.186426,45.434459,0 9.187925,45.435222,0 9.187959,45.434249,0 9.18837,45.433075,0 9.190358,45.432902,0 9.189235,45.429489,0 9.189996,45.427135,0 9.190958,45.426688,0 9.19208,45.426698,0 9.193795,45.431303,0 9.195681,45.427234,0 9.198011,45.422722,0 9.206237,45.413247,0 9.210575,45.413315,0 9.205705,45.419855,0 9.203998,45.42461,0 9.208517,45.424231,0 9.212162,45.424749,0 9.210328,45.428497,0 9.206825,45.432462,0 9.214994,45.434544,0 9.215214,45.43493,0 9.214779,45.435741,0 9.216973,45.436354,0 9.220195,45.433377,0 9.225374,45.429437,0 9.22933,45.425072,0 9.231968,45.422608,0 9.234527,45.424141,0 9.234212,45.42525,0 9.230605,45.430422,0 9.231384,45.43166,0 9.232097,45.433029,0 9.22974,45.433992,0 9.230944,45.435022,0 9.230914,45.43589,0 9.244758,45.427944,0 9.248259,45.430576,0 9.252085,45.43382,0 9.242577,45.438887,0 9.240497,45.439606,0 9.239303,45.442328,0 9.241146,45.443868,0 9.244249,45.44093,0 9.248208,45.442824,0 9.251717,45.442961,0 9.254664,45.444657,0 9.25847,45.448029,0 9.261257,45.451975,0 9.258199,45.454504,0 9.255307,45.457825,0 9.252848,45.457648,0 9.250838,45.462135,0 9.251747,45.465719,0 9.25285,45.473817,0 9.251985,45.476334,0 9.264998,45.480427,0 9.263139,45.484612,0 9.252044,45.482009,0 9.251498,45.484394,0 9.254729,45.485333,0 9.253673,45.487227,0 9.256194,45.488129,0 9.256284,45.48866,0 9.255322,45.49046,0 9.254499,45.492131,0 9.251955,45.491655,0 9.241609,45.491094,0 9.241356,45.49306,0 9.24076,45.495026,0 9.243174,45.496677,0 9.245931,45.498116,0 9.247863,45.498228,0 9.247934,45.499997,0 9.251755,45.501839,0 9.253111,45.501058,0 9.254833,45.502386,0 9.254904,45.503807,0 9.25415,45.504836,0 9.252716,45.505834,0 9.258683,45.509799,0 9.256032,45.511552,0 9.253972,45.510872,0 9.253812,45.514845,0 9.252989,45.51726,0 9.250373,45.516994,0 9.249506,45.516847,0 9.249013,45.51681,0 9.24856,45.516809,0 9.248039,45.516922,0 9.246953,45.519035,0 9.243117,45.518809,0 9.238018,45.518241,0 9.238251,45.517372,0 9.236261,45.516945,0 9.234982,45.51696,0 9.234357,45.518548,0 9.233864,45.518488,0 9.233302,45.521267,0 9.231652,45.521199,0 9.231314,45.522802,0 9.231002,45.524336,0 9.229215,45.52401,0 9.228322,45.523846,0 9.227907,45.523821,0 9.223309,45.523231,0 9.218443,45.524677,0 9.214746,45.525935,0 9.217776,45.530825,0 9.214209,45.530692,0 9.213259,45.528816,0 9.212167,45.529006,0 9.212182,45.527848,0 9.20515,45.528154,0 9.203361,45.524909,0 9.202602,45.525633,0 9.200488,45.525247,0 9.194083,45.526304,0 9.189511,45.526136,0 9.184761,45.527798,0 9.18456,45.528498,0 9.179735,45.52924,0 9.178999,45.530494,0 9.175473,45.529788,0 9.172215,45.530203,0 9.172773,45.531664,0 9.172904,45.53368,0 9.169885,45.533512,0 9.169912,45.535209,0 9.166142,45.534649,0 9.163568,45.530505,0 9.164469,45.529157,0 9.161401,45.533513,0 9.158784,45.533166,0 9.1577,45.532083,0 9.156949,45.530727,0 9.156742,45.52979,0 9.155878,45.528528,0 9.156609,45.526121,0 9.154724,45.52596,0 9.152829,45.525483,0 9.151389,45.52279,0 9.151157,45.520873,0 9.151594,45.520113,0 9.154012,45.518195,0 9.151612,45.518123,0 9.149897,45.518514,0 9.14705,45.521308,0 9.145455,45.522574,0 9.144162,45.522423,0 9.141567,45.521623,0 9.141902,45.520278,0 9.137173,45.519729,0 9.136943,45.520796,0 9.135018,45.520632,0 9.134775,45.522157,0 9.128439,45.51916,0 9.123292,45.515366,0 9.123251,45.513957,0 9.118928,45.515067,0 9.113489,45.514787,0 9.113514,45.513835,0 9.113756,45.512959,0 9.114514,45.512387,0 9.113663,45.511886,0 9.111875,45.512107,0 9.110615,45.512075,0 9.106993,45.51326,0 9.106108,45.513938,0 9.105688,45.514146,0 9.104849,45.51441,0 9.104554,45.514399,0 9.104706,45.512857,0 9.105218,45.512255,0 9.107598,45.512351,0 9.108296,45.511067,0 9.106161,45.508821,0 9.107232,45.508153,0 9.107802,45.505834,0 9.11034,45.504825,0 9.10942,45.503779,0 9.10762,45.504373,0 9.098663,45.506617,0 9.096543,45.505668,0 9.094494,45.502812,0 9.094832,45.501034,0 9.097197,45.499673,0 9.10014,45.49583,0 9.097053,45.495048,0 9.097902,45.491219,0 9.099407,45.490562,0 9.100033,45.488039,0 9.10181,45.488595,0 9.103313,45.489071,0 9.103106,45.489516,0 9.104458,45.489812,0 9.105822,45.490073,0 9.106317,45.490267,0 9.107339,45.490534,0 9.106685,45.49178,0 9.107985,45.492003,0 9.109049,45.489848,0 9.111351,45.490528,0 9.113652,45.489783,0 9.117348,45.485389,0 9.116597,45.484529,0 9.11395,45.484473,0 9.115173,45.477236,0 9.115341,45.47613,0 9.112204,45.476139,0 9.108489,45.477353,0 9.105758,45.482085,0 9.102342,45.482021,0 9.101919,45.478366,0 9.097777,45.476584,0 9.094333,45.47634,0 9.091896,45.482385,0 9.086647,45.483765,0 9.085464,45.481955,0 9.086773,45.479196,0 9.08525,45.47764,0 9.08022,45.47311,0 9.078976,45.470308,0 9.084518,45.467706,0 9.082177,45.467006,0 9.07876,45.466176,0 9.079989,45.464597,0 9.076745,45.463478,0 9.078528,45.456884,0 9.077479,45.453781,0 9.079832,45.44965,0 9.087017,45.45213,0 9.088709,45.45461,0 9.100479,45.451857,0 9.102979,45.452115,0 9.108674,45.45401,0 9.109632,45.451701,0 9.11629,45.453348,0 9.119169,45.448941,0 9.113117,45.446891,0 9.121975,45.434474,0 9.129386,45.437863,0 9.129322,45.439168,0 9.134067,45.440575,0 9.135054,45.439319,0 9.138151,45.440043,0 9.13978,45.437608,0 9.140767,45.438293,0 9.143004,45.438706,0 9.144143,45.437515,0 9.146171,45.436532,0 9.146457,45.43613,0 9.14569,45.435386,0 9.143174,45.433701,0 9.145282,45.432114,0 9.146682,45.431029,0 9.147997,45.429602,0 9.15023,45.429082,0 9.150114,45.4286,0 9.15335,45.42546,0 9.154236,45.425202,0 9.155957,45.424588,0 9.15772,45.423939,0 9.159426,45.427964,0 9.162083,45.42777,0 9.165506,45.430622,0 9.166008,45.430451,0 9.166527,45.42707,0 9.16564,45.425346,0 9.16604,45.424858,0 9.168536,45.424135,0 9.165835,45.419656,0 9.161296,45.412679,0 9.169097,45.410859,0 9.167008,45.402287,0 9.168296,45.401891,0 9.170968,45.402521,0 9.170843,45.400469,0</coordinates>
+                        </LinearRing>
+                     </outerBoundaryIs>
+                  </Polygon>
+               </Placemark>
+
+            </Folder>
+
+         </Folder>
+      </Folder>
+   </Document>
+</kml>
