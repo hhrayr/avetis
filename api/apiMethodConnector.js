@@ -14,9 +14,14 @@ class ApiMethodConnector {
           result: method(this.getMethodArguments()),
         };
       } catch (err) {
+        const statusCode = err && err.statusCode ? err.statusCode : 500;
+        const error = { message: err.message || 'internal server error' };
+        if (err.details) {
+          error.details = err.details;
+        }
         return {
-          statusCode: 500,
-          result: { error: { message: 'internal server error' } },
+          statusCode,
+          result: { error },
         };
       }
     }

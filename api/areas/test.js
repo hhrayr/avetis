@@ -1,6 +1,15 @@
+import apiError from '../apiError';
+
 class Test {
-  pingPong(params) {
-    return params;
+  pingPong(payload) {
+    return payload;
+  }
+
+  errorWithCode(payload) {
+    throw apiError(
+      payload.errorMessage,
+      payload.errorStatusCode,
+      payload.errorDetails);
   }
 }
 
