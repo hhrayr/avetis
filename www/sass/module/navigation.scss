@@ -4,13 +4,14 @@
 *
 */
 $nav-background: #ECF8F8;
+$heder-height: 52px;
 
 %handler-content-top-buffer {
-  margin-top: 3.4rem;
+  margin: $heder-height 0;
 }
 
 %default-navbar-line-height {
-  line-height: 3.4rem;
+  line-height: $heder-height;
 }
 
 %mobile-menu-slidebar-translation {
@@ -26,6 +27,7 @@ $nav-background: #ECF8F8;
   .nav {
     li {
       > a {
+        @include cursor;
         padding: 0 0 0 20px;
       }
     }

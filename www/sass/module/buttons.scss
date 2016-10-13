@@ -40,3 +40,8 @@
     }
   }
 }
+
+button {
+  @extend .button;
+  @extend .button.blue;
+}

@@ -4,28 +4,26 @@ import ReactDOM from 'react-dom';
 import { Modal } from 'react-bootstrap';
 import { getTranslation } from '../components/Tsl';
 import EnvironmentStore from './EnvironmentStore';
-import { trackEvent } from '../utils/tracking';
+import { pageView } from '../utils/tracking';
 
 class ApplicationStore extends BaseStore {
-  handleNavigationStart(currentRoute) {
-    trackEvent({
-      category: 'navigation',
-      action: 'click',
-      label: currentRoute.url,
-    });
-  }
-
   handleRouteChange(currentRoute) {
     this.dispatcher.waitFor(EnvironmentStore, () => {
       if (currentRoute) {
         if (typeof document !== 'undefined') {
-          const pageTitle = 'Get later from webtranslateit';
-          document.title = pageTitle;
-          window.dispatchEvent(new Event('avetis_history'));
+          const pageTitle = 'title';
+          if (pageTitle) {
+            document.title = pageTitle;
+          }
+          window.dispatchEvent(new Event('dn_history'));
         }
         this.emitChange();
       }
     });
+  }
+
+  handleNavigationStart(currentRoute) {
+    pageView(currentRoute.url);
   }
 
   showModalOverlay(payload) {
@@ -41,7 +39,7 @@ class ApplicationStore extends BaseStore {
         </Modal.Body>
         <Modal.Footer>
           <a onClick={() => { this.closeModal(overlayContainerId); }}>
-          {getTranslation(language, 'generics.close')}
+          {getTranslation(language, 'generics.modal.close')}
           </a>
         </Modal.Footer>
       </Modal>,

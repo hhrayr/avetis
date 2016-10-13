@@ -1,4 +1,5 @@
 import React from 'react';
+import Tsl from '../Tsl';
 
 class Intro extends React.Component {
   componentDidMount() {
@@ -17,7 +18,9 @@ class Intro extends React.Component {
   render() {
     return (
       <div id="intro">
-        intro
+        <div className="body-text">
+          <Tsl id="home.intro.text" />
+        </div>
       </div>
     );
   }

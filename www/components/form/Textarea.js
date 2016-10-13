@@ -1,7 +1,7 @@
 import React from 'react';
 import BaseFormElement from './BaseFormElement';
 
-class Input extends BaseFormElement {
+class Textarea extends BaseFormElement {
   constructor(props) {
     super(props);
     this.onFocus = this.onFocus.bind(this);
@@ -76,17 +76,18 @@ class Input extends BaseFormElement {
   }
 
   getValue() {
-    return this.refs.input.value;
+    return this.refs.textarea.value;
   }
 
   setValue(value) {
-    this.refs.input.value = value;
+    this.refs.textarea.value = value;
   }
 
   getContainerClassName() {
     const containerClassName = [
       super.getContainerClassName(),
       'input',
+      'textarea',
       'floating-placeholder',
     ];
     if (this.state.labelPosition === 'top') {
@@ -128,14 +129,14 @@ class Input extends BaseFormElement {
           {this.getLabelText()}
           {this.state.labelPosition === 'top' ? this.renderInfoIcon() : null}
         </label>
-        <input
-          ref="input"
+        <textarea
+          ref="textarea"
+          style={{ height: `${this.props.height}px` }}
           className={`form-control ${this.props.componentClass || ''}`}
           id={this.props.id}
           name={this.props.name}
           maxLength={this.getMaxLengthAttr()}
           defaultValue={this.props.value}
-          type={this.props.type}
           onFocus={this.onFocus}
           onChange={this.onChange}
           onBlur={this.onBlur}
@@ -149,17 +150,16 @@ class Input extends BaseFormElement {
   }
 }
 
-Input.defaultProps = {
-  type: 'text',
-  isInValid: false,
+Textarea.defaultProps = {
+  height: 140,
 };
 
-Input.propTypes = {
-  label: React.PropTypes.string,
+Textarea.propTypes = {
   segmentId: React.PropTypes.any,
+  label: React.PropTypes.string,
   name: React.PropTypes.string,
   placeholder: React.PropTypes.string,
-  type: React.PropTypes.string,
+  height: React.PropTypes.number,
   value: React.PropTypes.string,
   maxLength: React.PropTypes.number,
   validation: React.PropTypes.object,
@@ -169,4 +169,4 @@ Input.propTypes = {
   onFocus: React.PropTypes.func,
 };
 
-export default Input;
+export default Textarea;

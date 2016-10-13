@@ -1,11 +1,24 @@
 import React from 'react';
 import { OverlayTrigger, Tooltip } from 'react-bootstrap';
+import { trackDevEvent } from '../../utils/tracking';
 
 class BaseFormElement extends React.Component {
+  constructor(props) {
+    super(props);
+    this.onInfoIconOverlayEnter = this.onInfoIconOverlayEnter.bind(this);
+  }
   renderErrorMessage() {
     return (
       <span className="error">{this.props.error}</span>
     );
+  }
+
+  onInfoIconOverlayEnter() {
+    trackDevEvent({
+      category: 'registration',
+      action: 'infoIconOverlayEnter',
+      label: `${this.props.segmentId}.${this.props.id}`,
+    });
   }
 
   renderTooltip() {
@@ -20,6 +33,7 @@ class BaseFormElement extends React.Component {
           overlay={this.renderTooltip()}
           placement="right"
           trigger="click"
+          onEnter={this.onInfoIconOverlayEnter}
         >
           <span className="info-icon" />
         </OverlayTrigger>
@@ -29,7 +43,7 @@ class BaseFormElement extends React.Component {
   }
 
   getValue() {
-    return null;
+    return this.props.value;
   }
 
   getContainerClassName() {
@@ -54,8 +68,9 @@ class BaseFormElement extends React.Component {
 }
 
 BaseFormElement.propTypes = {
+  id: React.PropTypes.string.isRequired,
+  segmentId: React.PropTypes.string.isRequired,
   validation: React.PropTypes.object,
-  id: React.PropTypes.string,
   error: React.PropTypes.string,
   isInValid: React.PropTypes.bool,
   disabled: React.PropTypes.bool,
@@ -63,6 +78,7 @@ BaseFormElement.propTypes = {
   infotext: React.PropTypes.string,
   onValueChange: React.PropTypes.func,
   containerClassName: React.PropTypes.string,
+  value: React.PropTypes.any,
 };
 
 export default BaseFormElement;
