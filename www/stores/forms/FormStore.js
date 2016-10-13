@@ -1,6 +1,6 @@
 import BaseStore from 'fluxible/addons/BaseStore';
 import { forEach, merge, find } from 'lodash';
-import ContactUsFormBuilder from './ContactUsFormBuilder';
+import buildContactUsForm from './ContactUsFormBuilder';
 
 class FormStore extends BaseStore {
   constructor(dispatcher) {
@@ -8,18 +8,18 @@ class FormStore extends BaseStore {
     this.staticSchemas = {};
   }
 
-  getSchema(formId) {
+  getSchema(formId, language) {
     if (typeof this.staticSchemas[formId] === 'undefined') {
-      this.staticSchemas[formId] = this.buildSchema(formId);
+      this.staticSchemas[formId] = this.buildSchema(formId, language);
     }
     return this.staticSchemas[formId];
   }
 
-  buildSchema(formId) {
-    switch (formId) {
-      case 'contact-us': return ContactUsFormBuilder.build();
-      default: return null;
+  buildSchema(formId, language) {
+    if (formId.indexOf('contact-us') === 0) {
+      return buildContactUsForm(language);
     }
+    return null;
   }
 
   updateSchema(payload) {
@@ -101,8 +101,19 @@ class FormStore extends BaseStore {
   }
 
   clearSchema(formId) {
-    if (typeof this.staticSchemas[formId] !== 'undefined') {
-      delete this.staticSchemas[formId];
+    const clear = (fId, store) => {
+      if (typeof store.staticSchemas[fId] !== 'undefined') {
+        const storeRef = store;
+        delete storeRef.staticSchemas[fId];
+        store.emitChange();
+      }
+    };
+    if (typeof window !== 'undefined') {
+      window.setTimeout(() => {
+        clear(formId, this);
+      }, 300);
+    } else {
+      clear(formId, this);
     }
   }
 
@@ -119,7 +130,7 @@ class FormStore extends BaseStore {
 
 FormStore.storeName = 'FormStore';
 FormStore.handlers = {
-  FORM_VALIDATE_ALL_ELEMENTS: 'updateSchema',
+  FORM_UPDATE_SCHEMA: 'updateSchema',
   FORM_UPDATE_ELEMENT: 'updateElement',
   FORM_UPDATE_ELEMENTS: 'updateElements',
   FORM_CLEAR_SCHEMA: 'clearSchema',

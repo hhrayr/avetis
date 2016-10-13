@@ -3,7 +3,6 @@ $mdDeviceSize: 1199px;
 $smDeviceSize: 560px;
 $elementsBorderColor: #999999;
 .form-container {
-  background-color: #F6F6F6;
 	position: relative;
 	h3 {
 		font-size: 1.3em;
@@ -12,7 +11,6 @@ $elementsBorderColor: #999999;
 	.segment {
 		@include clearfix;
 		&:not(:last-child) {
-			border-bottom: 1px solid #ddd;
 			padding-bottom: 20px;
 		}
 		.form-group {

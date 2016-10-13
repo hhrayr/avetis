@@ -22,8 +22,10 @@ class Input extends BaseFormElement {
   }
 
   componentWillReceiveProps(nextProps) {
-    if (nextProps.value && this.getValue() !== nextProps.value) {
-      this.setValue(nextProps.value);
+    if (this.getValue() !== nextProps.value) {
+      this.setValue(nextProps.value || '');
+    }
+    if (nextProps.value) {
       this.updateLabelPosition();
     }
   }

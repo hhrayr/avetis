@@ -11,7 +11,7 @@ class ApplicationStore extends BaseStore {
     this.dispatcher.waitFor(EnvironmentStore, () => {
       if (currentRoute) {
         if (typeof document !== 'undefined') {
-          const pageTitle = this.dispatcher.getStore('ContentStore').getPageSettings().title;
+          const pageTitle = 'title';
           if (pageTitle) {
             document.title = pageTitle;
           }

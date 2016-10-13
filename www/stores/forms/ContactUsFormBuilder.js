@@ -1,4 +1,10 @@
+import { getTranslation } from '../../components/Tsl';
+
 class ContactUsFormBuilder {
+  constructor(language) {
+    this._language = language;
+  }
+
   build() {
     const elements = [];
     elements.push(this.buildEmailInput());
@@ -12,12 +18,16 @@ class ContactUsFormBuilder {
     };
   }
 
+  getLabelTranslaions(label) {
+    return getTranslation(this._language, label);
+  }
+
   buildEmailInput() {
     return {
       id: 'email',
       type: 'input',
-      label: 'form.email.label',
-      error: 'form.email.error',
+      label: this.getLabelTranslaions('form.email.label'),
+      error: this.getLabelTranslaions('form.email.error'),
       validation: {
         required: true,
         pattern: 'email',
@@ -29,7 +39,7 @@ class ContactUsFormBuilder {
     return {
       id: 'comapny-name',
       type: 'input',
-      label: 'form.company-name.label',
+      label: this.getLabelTranslaions('form.company-name.label'),
     };
   }
 
@@ -37,8 +47,8 @@ class ContactUsFormBuilder {
     return {
       id: 'message',
       type: 'textarea',
-      label: 'form.message.label',
-      error: 'form.message.error',
+      label: this.getLabelTranslaions('form.message.label'),
+      error: this.getLabelTranslaions('form.message.error'),
       validation: {
         required: true,
       },
@@ -46,4 +56,6 @@ class ContactUsFormBuilder {
   }
 }
 
-export default new ContactUsFormBuilder();
+export default (language) => {
+  return new ContactUsFormBuilder(language).build();
+};

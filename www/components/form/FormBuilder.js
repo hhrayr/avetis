@@ -11,6 +11,7 @@ import DateElement from './DateElement';
 import Payment from './payment/Payment';
 import PhoneNumber from './PhoneNumber';
 import GoogleAutocomplete from './GoogleAutocomplete';
+import Tsl from '../Tsl';
 
 class FormBuilder extends React.Component {
   constructor(props) {
@@ -358,6 +359,11 @@ class FormBuilder extends React.Component {
       <div className={wrapperClassName}>
         <form noValidate onSubmit={this.onSubmitForm}>
           {this.renderSegments()}
+          {this.props.submitButton &&
+            <button type="submit">
+              <Tsl id={this.props.submitButton} />
+            </button>
+          }
         </form>
       </div>
     );
@@ -369,6 +375,7 @@ FormBuilder.propTypes = {
   promocode: React.PropTypes.object,
   language: React.PropTypes.string,
   country: React.PropTypes.string,
+  submitButton: React.PropTypes.string,
   onElementValueChange: React.PropTypes.func,
   onElementValueChangeBulk: React.PropTypes.func,
   onElementFocus: React.PropTypes.func,

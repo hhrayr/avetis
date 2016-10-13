@@ -41,7 +41,7 @@ function getElementValidationSchema(elementSchema) {
   return res;
 }
 
-export function validateAllElements(context, payload) {
+function validateAllElements(context, payload) {
   let firstInValid;
   payload.schema.segments.forEach(segment => {
     segment.elements.forEach(element => {
@@ -59,10 +59,32 @@ export function validateAllElements(context, payload) {
   });
   if (firstInValid) {
     jumpToElement(firstInValid.id);
-    context.dispatch('FORM_VALIDATE_ALL_ELEMENTS', payload);
   }
-
   return !firstInValid;
+}
+
+export function clearSchema(context, formId, done) {
+  context.dispatch('FORM_CLEAR_SCHEMA', formId);
+  if (done) {
+    done();
+  }
+}
+
+export function submitForm(context, payload, done) {
+  if (validateAllElements(context, payload)) {
+    trackDevEvent({
+      category: 'form',
+      action: 'submitSuccess',
+      label: payload.formId,
+    });
+    context.dispatch('FORM_SUBMIT_SUCCESS', payload);
+    if (payload.clearOnSubmit) {
+      clearSchema(context, payload.formId);
+    }
+  } else {
+    context.dispatch('FORM_UPDATE_SCHEMA', payload);
+  }
+  done();
 }
 
 export function updateElement(context, payload, done) {
@@ -89,10 +111,5 @@ export function validateElement(context, payload, done) {
     elementSchema.value
   );
   context.dispatch('FORM_UPDATE_ELEMENT', elementSchema);
-  done();
-}
-
-export function clearSchema(context, formId, done) {
-  context.dispatch('FORM_CLEAR_SCHEMA', formId);
   done();
 }
