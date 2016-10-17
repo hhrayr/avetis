@@ -1,6 +1,7 @@
 import request from 'superagent';
 import { Promise } from 'es6-promise';
 import { getEnvironment } from '../../shared/utils/env';
+import { read as readCookie } from './cookie';
 
 const config = {
   local: {
@@ -20,7 +21,7 @@ class Proxy {
     return new Promise((resolve, reject) => {
       request('GET', this._resolveApiUrl(url))
         .accept('application/json')
-        .set('api-tocken', 'WEB-SITE-PROXY')
+        .set('api-tocken', readCookie('api-tocken') || 'WEB-SITE-PROXY')
         .query(params)
         .end((err, res) => {
           if (err) {
@@ -36,7 +37,7 @@ class Proxy {
     return new Promise((resolve, reject) => {
       request('POST', this._resolveApiUrl(url))
         .accept('application/json')
-        .set('api-tocken', 'WEB-SITE-PROXY')
+        .set('api-tocken', readCookie('api-tocken') || 'WEB-SITE-PROXY')
         .query(params)
         .send(data)
         .end((err, res) => {

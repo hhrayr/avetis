@@ -1,7 +1,7 @@
 import { isSchemaElementValid } from '../utils/schemaElementValidation';
 import { trackDevEvent } from '../utils/tracking';
 import { merge } from 'lodash';
-import formActionsAdapter from '../utils/formActionsAdapter';
+import formActionsDispatcher from '../utils/formActionsDispatcher';
 
 function jumpToElement(elementId) {
   const element = document.getElementById(`${elementId}-container`);
@@ -74,7 +74,7 @@ export function clearSchema(context, formId, done) {
 export function submitForm(context, payload, done) {
   context.dispatch('FORM_SUBMIT_START', payload);
   if (validateAllElements(context, payload)) {
-    formActionsAdapter(payload)
+    formActionsDispatcher(payload)
       .then((data) => {
         trackDevEvent({
           category: 'form',

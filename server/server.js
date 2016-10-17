@@ -32,7 +32,7 @@ server.use(expressDomainMiddleware);
 server.use(favicon(`${__dirname}/../www/assets/favicon.ico`));
 server.use(compression());
 server.use(bodyParser.json());
-server.all('/api/:area/:method', handleApiRequest);
+server.all('/api/:domain/:method', handleApiRequest);
 server.use('/wti-pull', pullTranslations);
 server.get('/sitemap.xml', sitemapHandler);
 server.get('/info', infoHandler);

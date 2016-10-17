@@ -32,16 +32,16 @@ class ApiMethodConnector {
   }
 
   getMethod() {
-    const area = this.getArea();
-    if (area &&
+    const domain = this.getDomain();
+    if (domain &&
       this.request.params &&
       this.request.params.method) {
       const apiMethodName = this.request.params.method.toLowerCase();
-      const areaMethods = Object.getOwnPropertyNames(Object.getPrototypeOf(area));
+      const domainMethods = Object.getOwnPropertyNames(Object.getPrototypeOf(domain));
       let res = null;
-      forEach(areaMethods, (areaMethodName) => {
-        if (areaMethodName.toLowerCase() === apiMethodName) {
-          res = area[areaMethodName];
+      forEach(domainMethods, (domainMethodName) => {
+        if (domainMethodName.toLowerCase() === apiMethodName) {
+          res = domain[domainMethodName];
           return false;
         }
         return true;
@@ -51,15 +51,18 @@ class ApiMethodConnector {
     return null;
   }
 
-  getArea() {
+  getDomain() {
     if (this.request.params &&
-      this.request.params.area) {
+      this.request.params.domain) {
       const fileName =
-        `${__dirname}/areas/` +
-        `${this.request.params.area.toLowerCase()}.js`;
+        `${__dirname}/domains/` +
+        `${this.request.params.domain.toLowerCase()}.js`;
       try {
         return require(fileName).default;
-      } catch (err) { return null; }
+      } catch (err) {
+        console.log('error loading api domain', err);
+        return null;
+      }
     }
     return null;
   }

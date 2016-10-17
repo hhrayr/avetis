@@ -22,13 +22,13 @@ describe('Api Connector', () => {
       .end(done);
   });
 
-  it('should return 406 if the given api area or/and method is not found', (done) => {
+  it('should return 406 if the given api domain or/and method is not found', (done) => {
     request(app)
       .get('/api/test/invalidMethod')
       .expect(406)
       .end(() => {
         request(app)
-          .get('/api/invalidArea/invalidMethod')
+          .get('/api/invalidDomain/invalidMethod')
           .expect(406)
           .end(done);
       });

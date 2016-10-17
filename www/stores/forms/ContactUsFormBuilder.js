@@ -37,7 +37,7 @@ class ContactUsFormBuilder {
 
   buildCompanyNameInput() {
     return {
-      id: 'comapny-name',
+      id: 'company-name',
       type: 'input',
       label: this.getLabelTranslaions('form.company-name.label'),
     };
