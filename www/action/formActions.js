@@ -1,6 +1,7 @@
 import { isSchemaElementValid } from '../utils/schemaElementValidation';
 import { trackDevEvent } from '../utils/tracking';
 import { merge } from 'lodash';
+import formActionsDispatcher from '../utils/formActionsDispatcher';
 
 function jumpToElement(elementId) {
   const element = document.getElementById(`${elementId}-container`);
@@ -71,16 +72,34 @@ export function clearSchema(context, formId, done) {
 }
 
 export function submitForm(context, payload, done) {
+  context.dispatch('FORM_SUBMIT_START', payload);
   if (validateAllElements(context, payload)) {
-    trackDevEvent({
-      category: 'form',
-      action: 'submitSuccess',
-      label: payload.formId,
-    });
-    context.dispatch('FORM_SUBMIT_SUCCESS', payload);
-    if (payload.clearOnSubmit) {
-      clearSchema(context, payload.formId);
-    }
+    formActionsDispatcher(payload)
+      .then((data) => {
+        trackDevEvent({
+          category: 'form',
+          action: 'submitSuccess',
+          label: payload.formId,
+        });
+        context.dispatch('FORM_SUBMIT_SUCCESS', {
+          formId: payload.formId,
+          data,
+        });
+        if (payload.clearOnSubmit) {
+          clearSchema(context, payload.formId);
+        }
+      })
+      .catch((error) => {
+        trackDevEvent({
+          category: 'form',
+          action: 'submitError',
+          label: `form: ${payload.formId}, message: ${error.message}`,
+        });
+        context.dispatch('FORM_SUBMIT_FAILED', {
+          formId: payload.formId,
+          error,
+        });
+      });
   } else {
     context.dispatch('FORM_UPDATE_SCHEMA', payload);
   }

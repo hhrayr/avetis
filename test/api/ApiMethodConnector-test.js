@@ -22,13 +22,13 @@ describe('Api Connector', () => {
       .end(done);
   });
 
-  it('should return 406 if the given api area or/and method is not found', (done) => {
+  it('should return 406 if the given api domain or/and method is not found', (done) => {
     request(app)
       .get('/api/test/invalidMethod')
       .expect(406)
       .end(() => {
         request(app)
-          .get('/api/invalidArea/invalidMethod')
+          .get('/api/invalidDomain/invalidMethod')
           .expect(406)
           .end(done);
       });
@@ -50,7 +50,7 @@ describe('Api Connector', () => {
 
   it('is should return request data for Post', (done) => {
     request(app)
-      .get('/api/test/pingpong')
+      .post('/api/test/pingpong')
       .set('api-tocken', 'test-api-tocken')
       .query('test-param-name=test-param-value')
       .send({
@@ -64,6 +64,52 @@ describe('Api Connector', () => {
         'test-param-name': 'test-param-value',
         param1: 'value1',
         param2: 'value2',
+      })
+      .end(done);
+  });
+
+  it('is should return correct error for GET', (done) => {
+    request(app)
+      .get('/api/test/errorwithcode')
+      .set('api-tocken', 'test-api-tocken')
+      .query('errorMessage=test-error-message&errorStatusCode=567')
+      .expect(567)
+      .expect({
+        error: { message: 'test-error-message' },
+      })
+      .end(done);
+  });
+
+  it('is should return correct error for POST', (done) => {
+    request(app)
+      .post('/api/test/errorwithcode')
+      .set('api-tocken', 'test-api-tocken')
+      .send({
+        errorMessage: 'test-error-message-post',
+        errorStatusCode: 678,
+      })
+      .expect(678)
+      .expect({
+        error: { message: 'test-error-message-post' },
+      })
+      .end(done);
+  });
+
+  it('is should return correct error with details for POST', (done) => {
+    request(app)
+      .post('/api/test/errorwithcode')
+      .set('api-tocken', 'test-api-tocken')
+      .send({
+        errorMessage: 'test-error-message-post',
+        errorStatusCode: 789,
+        errorDetails: { filed1: 'value1', field2: { value: '2' } },
+      })
+      .expect(789)
+      .expect({
+        error: {
+          message: 'test-error-message-post',
+          details: { filed1: 'value1', field2: { value: '2' } },
+        },
       })
       .end(done);
   });
