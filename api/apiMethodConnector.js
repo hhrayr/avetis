@@ -5,30 +5,65 @@ class ApiMethodConnector {
     this.request = request;
   }
 
-  invokeApiMethod() {
+  invokeApiMethod(callback) {
     const method = this.getMethod();
     if (method) {
       try {
-        return {
-          statusCode: 200,
-          result: method(this.getMethodArguments()),
-        };
-      } catch (err) {
-        const statusCode = err && err.statusCode ? err.statusCode : 500;
-        const error = { message: err.message || 'internal server error' };
-        if (err.details) {
-          error.details = err.details;
+        const methodResult = method(this.getMethodArguments());
+        if (!this.checkAndInvokePromiseMethodResult(methodResult, callback)) {
+          callback({
+            statusCode: 200,
+            result: methodResult,
+          });
         }
-        return {
-          statusCode,
+      } catch (err) {
+        const error = this.getNormalizedError(err);
+        callback({
+          statusCode: err.statusCode || 500,
           result: { error },
-        };
+        });
       }
+    } else {
+      callback({
+        statusCode: 406,
+        result: { error: { message: 'method not found' } },
+      });
     }
-    return {
-      statusCode: 406,
-      result: { error: { message: 'method not found' } },
-    };
+  }
+
+  checkAndInvokePromiseMethodResult(methodResult, callback) {
+    if (this.isPromiseMethodResult(methodResult)) {
+      methodResult
+        .then((res) => {
+          callback({
+            statusCode: 200,
+            result: res,
+          });
+        })
+        .catch((err) => {
+          const error = this.getNormalizedError(err);
+          callback({
+            statusCode: err.statusCode || 500,
+            result: { error },
+          });
+        });
+      return true;
+    }
+    return false;
+  }
+
+  isPromiseMethodResult(methodResult) {
+    return methodResult &&
+      typeof methodResult.then === 'function' &&
+      typeof methodResult.catch === 'function';
+  }
+
+  getNormalizedError(err) {
+    const error = merge({}, err);
+    if (error.hasOwnProperty('statusCode')) {
+      delete error.statusCode;
+    }
+    return error;
   }
 
   getMethod() {

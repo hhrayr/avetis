@@ -34,7 +34,7 @@ describe('Api Connector', () => {
       });
   });
 
-  it('is should return request data for Get', (done) => {
+  it('should return request data for Get', (done) => {
     request(app)
       .get('/api/test/pingpong')
       .set('api-tocken', 'test-api-tocken')
@@ -48,7 +48,7 @@ describe('Api Connector', () => {
       .end(done);
   });
 
-  it('is should return request data for Post', (done) => {
+  it('should return request data for Post', (done) => {
     request(app)
       .post('/api/test/pingpong')
       .set('api-tocken', 'test-api-tocken')
@@ -68,7 +68,7 @@ describe('Api Connector', () => {
       .end(done);
   });
 
-  it('is should return correct error for GET', (done) => {
+  it('should return correct error for GET', (done) => {
     request(app)
       .get('/api/test/errorwithcode')
       .set('api-tocken', 'test-api-tocken')
@@ -80,7 +80,7 @@ describe('Api Connector', () => {
       .end(done);
   });
 
-  it('is should return correct error for POST', (done) => {
+  it('should return correct error for POST', (done) => {
     request(app)
       .post('/api/test/errorwithcode')
       .set('api-tocken', 'test-api-tocken')
@@ -95,9 +95,77 @@ describe('Api Connector', () => {
       .end(done);
   });
 
-  it('is should return correct error with details for POST', (done) => {
+  it('should return correct error with details for POST', (done) => {
     request(app)
       .post('/api/test/errorwithcode')
+      .set('api-tocken', 'test-api-tocken')
+      .send({
+        errorMessage: 'test-error-message-post',
+        errorStatusCode: 789,
+        errorDetails: { filed1: 'value1', field2: { value: '2' } },
+      })
+      .expect(789)
+      .expect({
+        error: {
+          message: 'test-error-message-post',
+          details: { filed1: 'value1', field2: { value: '2' } },
+        },
+      })
+      .end(done);
+  });
+
+  it('should return promise request data for Get', (done) => {
+    request(app)
+      .get('/api/test/promisePingPong')
+      .set('api-tocken', 'test-api-tocken')
+      .query('test-param-name=test-param-value')
+      .expect(200)
+      .expect({
+        __IP: localTestIp,
+        __TOKEN: 'test-api-tocken',
+        'test-param-name': 'test-param-value',
+      })
+      .end(done);
+  });
+
+  it('should return promise request data for Post', (done) => {
+    request(app)
+      .post('/api/test/promisepingpong')
+      .set('api-tocken', 'test-api-tocken')
+      .query('test-param-name=test-param-value')
+      .send({
+        param1: 'value1',
+        param2: 'value2',
+      })
+      .expect(200)
+      .expect({
+        __IP: localTestIp,
+        __TOKEN: 'test-api-tocken',
+        'test-param-name': 'test-param-value',
+        param1: 'value1',
+        param2: 'value2',
+      })
+      .end(done);
+  });
+
+  it('should return correct promise error for POST', (done) => {
+    request(app)
+      .post('/api/test/errorpromisewithcode')
+      .set('api-tocken', 'test-api-tocken')
+      .send({
+        errorMessage: 'test-error-message-post',
+        errorStatusCode: 678,
+      })
+      .expect(678)
+      .expect({
+        error: { message: 'test-error-message-post' },
+      })
+      .end(done);
+  });
+
+  it('should return correct promise error with details for POST', (done) => {
+    request(app)
+      .post('/api/test/errorpromisewithcode')
       .set('api-tocken', 'test-api-tocken')
       .send({
         errorMessage: 'test-error-message-post',
