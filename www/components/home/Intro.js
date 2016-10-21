@@ -18,6 +18,10 @@ class Intro extends React.Component {
   render() {
     return (
       <div id="intro">
+        <h3>What will it mean to live?</h3>
+        <div className="home-image">
+          <img src="/assets/images/mountain.jpg" />
+        </div>
         <div className="body-text">
           <Tsl id="home.intro.text" />
         </div>

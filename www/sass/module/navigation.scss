@@ -7,7 +7,7 @@ $nav-background: #ECF8F8;
 $heder-height: 52px;
 
 %handler-content-top-buffer {
-  margin: $heder-height 0;
+  margin-top: $heder-height;
 }
 
 %default-navbar-line-height {
@@ -71,7 +71,7 @@ $heder-height: 52px;
   @extend %default-navbar-line-height;
   @extend %mobile-menu-slidebar-translation;
   @include unselectable;
-  background-color: $nav-background;
+  background-color: white;
   left: 0;
   min-width: 320px;
   position: fixed;

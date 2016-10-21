@@ -6,12 +6,13 @@ import Features from './Features';
 import UseCases from './UseCases';
 import Pricing from './Pricing';
 
-const headerHeight = 55;
+const headerHeight = 51;
 
 class Home extends React.Component {
   constructor(props) {
     super(props);
     this.handleHomeBackgroundScroll = this.handleHomeBackgroundScroll.bind(this);
+    this.windowScrolled = false;
   }
 
   shouldComponentUpdate() {
@@ -19,15 +20,8 @@ class Home extends React.Component {
   }
 
   componentDidMount() {
-    this.backgroundImageContainer = document.createElement('div');
-    this.backgroundImageContainer.className = 'image';
-
-    this.backgroundNode = document.createElement('div');
-    this.backgroundNode.id = 'home-background';
-    this.backgroundNode.appendChild(this.backgroundImageContainer);
-
-    document.body.appendChild(this.backgroundNode);
     window.addEventListener('scroll', this.handleHomeBackgroundScroll);
+    this.handleHomeBackgroundScroll();
     this.scrollToRouteSection();
   }
 
@@ -36,13 +30,27 @@ class Home extends React.Component {
   }
 
   componentWillUnmount() {
-    document.body.removeChild(this.backgroundNode);
     window.removeEventListener('scroll', this.handleHomeBackgroundScroll);
   }
 
   handleHomeBackgroundScroll() {
-    this.backgroundImageContainer.style.transform =
-      `translate(0, -${Math.round(this.getWindowScrollTop() * 0.5)}px)`;
+    const windowScroll = this.getWindowScrollTop();
+    if (windowScroll) {
+      if (!this.windowScrolled) {
+        document.body.className += ' clear-nav-color';
+        this.windowScrolled = true;
+      }
+    } else {
+      if (this.windowScrolled) {
+        document.body.className = document.body.className.replace(/clear\-nav\-color/g, '');
+        this.windowScrolled = false;
+      }
+    }
+    const backgroundPositionX = Math.round(
+      this.refs['home-main-container'].offsetHeight / 2 -
+      windowScroll / 5
+    );
+    this.refs['home-main-container'].style.backgroundPosition = `center ${backgroundPositionX}px`;
   }
 
   scrollToRouteSection() {
@@ -63,17 +71,17 @@ class Home extends React.Component {
 
   render() {
     return (
-      <div>
-        <ScrollElelement name="home">
+      <div className="home-main-container" ref="home-main-container">
+        <ScrollElelement name="home" className="home-scroll-slide">
           <Intro offset={headerHeight} />
         </ScrollElelement>
-        <ScrollElelement name="homeFeatures">
+        <ScrollElelement name="homeFeatures" className="home-scroll-slide">
           <Features />
         </ScrollElelement>
-        <ScrollElelement name="homeUseCases">
+        <ScrollElelement name="homeUseCases" className="home-scroll-slide">
           <UseCases />
         </ScrollElelement>
-        <ScrollElelement name="homePricing">
+        <ScrollElelement name="homePricing" className="home-scroll-slide">
           <Pricing />
         </ScrollElelement>
       </div>

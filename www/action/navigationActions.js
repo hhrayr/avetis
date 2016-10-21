@@ -14,6 +14,7 @@ export function toggleLanguageSlideoutVisibility(context, payload, done) {
 }
 
 export function navigateMenuItemRoute(context, payload, done) {
+  closeMobileNavigation(context, null, done);
   context.dispatch('NAVIGATE_MENU_ITEM_ROUTE', payload);
   done();
 }
