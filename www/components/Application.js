@@ -9,7 +9,7 @@ let Application = (props) => {
   const Handler = props.currentRoute.handler;
   const activeSidebar = props.isMobileNavbarVisible ? 'active-mobile-sidebar' : '';
   return (
-    <div className={`main-container ${activeSidebar}`}>
+    <div className={`main-container ${activeSidebar} ${props.currentRoute.name}`}>
       {props.isMobileNavbarVisible &&
         <MobileNavigationContainer
           isLanguageSlideoutVisible={props.isLanguageSlideoutVisible}

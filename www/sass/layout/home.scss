@@ -1,39 +1,65 @@
 
-.page-content {
+.home-main-container {
+  background-color: #0094c8;
+  background-image: url("/assets/images/home/nodes-gold-blue-2.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 70% auto;
+  .home-scroll-slide {
+    > div {
+      display: table;
+      min-height: 450px;
+      padding: 30px 15px;
+      width: 100%;
+    }
+  }
+  .body-text {
+    color: #666666;
+    margin: 0 auto;
+    text-align: center;
+    width: 85%;
+    @media (max-width: 768px) {
+      text-align: left;
+    }
+  }
   #intro {
     background-color: $nav-background;
-    height: 450px;
+    h3 {
+      margin-top: 50px;
+    }
+    .home-image {
+      margin: 40px auto;
+      width: 70%;
+      img {
+        width: 100%;
+      }
+    }
   }
   #features {
-    height: 450px;
+    .headline {
+      color: white;
+      font-size: 1.6em;
+      font-weight: bold;
+      margin: 160px 0;
+    }
   }
   #use-cases {
-    background-color: blue;
-    height: 450px;
+    background-color: white;
+    h3 {
+      margin: 50px 0;
+    }
   }
   #pricing {
-    height: 450px;
+    color: white;
+    .body-text {
+      color: white;
+    }
+    h3 {
+      margin: 50px 0;
+    }
   }
-}
-
-#home-background {
-  height: 100%;
-  left: 0;
-  overflow: hidden;
-  position: absolute;
-  width: 100%;
-  top: 0;
-  z-index: -1;
-  .image {
-    background-color: #0094c8;
-    background-image: url("/assets/images/home/nodes-gold-blue-2.jpg");
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 125%;
-    left: 0;
-    position: relative;
-    width: 100%;
-    top: 0%;
+  h3 {
+    text-align: center;
   }
 }
 
@@ -63,5 +89,25 @@
 .modal-dialog {
   a {
     cursor: pointer;
+  }
+}
+
+.main-container {
+  &.home {
+    .navbar-default {
+      background-color: $nav-background;
+    }
+  }
+}
+
+body {
+  &.clear-nav-color {
+    .main-container {
+      &.home {
+        .navbar-default {
+          background-color: white;
+        }
+      }
+    }
   }
 }

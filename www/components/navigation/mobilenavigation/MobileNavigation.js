@@ -8,9 +8,6 @@ const MobileNavigation = (props) => {
       <div className="navbar-mobile-container">
         <LanguageSelector {...props} showAccordionIcon />
         <NavList showStaticLinks />
-        <div className="container-fluid">
-          Something
-        </div>
       </div>
     </div>
   );

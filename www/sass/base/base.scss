@@ -29,6 +29,9 @@ body {
   font-style: normal;
   position: relative;
 }
+html, body {
+  min-height: 100%;
+}
 a {
   &:focus, &:active {
     outline: none;
